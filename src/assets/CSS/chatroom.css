@@ -1,0 +1,60 @@
+:root {
+    --bs-dark: #1D1B1C;
+    --bs-dark-rgb: 29, 27, 28;
+    --bs-primary: #098EC3 ;
+    --bs-primary-rgb: 9, 142, 195;
+    --bs-secondary: #E00095;
+    --bs-secondary-rgb: 224, 0, 149;
+    --bs-info: #A8166A;
+    --bs-info-rgb: 168, 22, 106; 
+    --bs-success: #15B6F4;
+    --bs-success-rgb: 21, 182, 244;
+  }
+  
+  body {
+    background-color: var(--bs-dark);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Fonts */
+  @font-face {
+    font-family: "Market-Deco";
+    src: url(./assets/fonts/market_deco/Market_Deco.ttf)
+  }
+  
+   @font-face {
+     font-family: "Roboto-Regular";
+     src: url(./assets/fonts/roboto/Roboto-Regular.ttf)
+   }
+  
+  /* Text */
+  h1 {
+    font-family: Market-Deco;
+    color: white;
+  }
+  
+  h2 {
+    font-family: Market-Deco;
+    color: white;
+  }
+  
+  p {
+    font-family: Roboto;
+    color: white;
+  }
+  
+   /* Buttons */
+   .btn-secondary {
+    background-color: var(--bs-secondary) !important;
+    border: none;
+  }
+  
+  .btn-dark {
+    background-color: var(--bs-dark) !important;
+    border: none;
+  }
+  
+  
+   
