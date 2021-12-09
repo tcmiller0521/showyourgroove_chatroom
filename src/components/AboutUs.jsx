@@ -1,8 +1,10 @@
-import '../assets/CSS/aboutpage.css';
+import '../assets/CSS/aboutPage.css';
 
 const AboutUs = () => {
     return (
-        <h1>This is the about us page</h1>
+        <body>
+            <h1>This is the about us page</h1>
+        </body>
     )
 }
 
