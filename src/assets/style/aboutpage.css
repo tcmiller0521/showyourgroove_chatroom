@@ -18,24 +18,6 @@
     padding: 0;
   }
   
-  /* Fonts */
-  
-
-  /* Text */
-  h1 {
-    font-family: MarketDeco;
-    color: white;
-  }
-  
-  h2 {
-    font-family: MarketDeco;
-    color: white;
-  }
-  
-  p {
-    font-family: Roboto;
-    color: white;
-  }
   
    /* Buttons */
    .btn-secondary {

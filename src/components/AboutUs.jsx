@@ -1,4 +1,4 @@
-import '../assets/CSS/aboutPage.css';
+import '../assets/style/aboutpage.css'
 
 const AboutUs = () => {
     return (
