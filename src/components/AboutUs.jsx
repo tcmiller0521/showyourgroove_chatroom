@@ -1,6 +1,10 @@
+import '../assets/style/aboutpage.css'
+
 const AboutUs = () => {
     return (
-        <h1>This is the about us page</h1>
+        <body>
+            <h1>This is the about us page</h1>
+        </body>
     )
 }
 
