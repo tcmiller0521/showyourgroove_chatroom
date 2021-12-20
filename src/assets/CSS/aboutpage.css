@@ -1,52 +1,126 @@
 :root {
-    --bs-dark: #1D1B1C;
-    --bs-dark-rgb: 29, 27, 28;
-    --bs-primary: #098EC3 ;
-    --bs-primary-rgb: 9, 142, 195;
-    --bs-secondary: #E00095;
-    --bs-secondary-rgb: 224, 0, 149;
-    --bs-info: #A8166A;
-    --bs-info-rgb: 168, 22, 106; 
-    --bs-success: #15B6F4;
-    --bs-success-rgb: 21, 182, 244;
-  }
-  
-  body {
-    background-color: var(--bs-dark);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Fonts */
+  --bs-dark: #1D1B1C;
+  --bs-dark-rgb: 29, 27, 28;
+  --bs-primary: #098EC3;
+  --bs-primary-rgb: 9, 142, 195;
+  --bs-secondary: #E00095;
+  --bs-secondary-rgb: 224, 0, 149;
+  --bs-info: #A8166A;
+  --bs-info-rgb: 168, 22, 106;
+  --bs-success: #15B6F4;
+  --bs-success-rgb: 21, 182, 244;
+}
 
-  
-  /* Text */
-  h1 {
-    font-family: Market-Deco;
-    color: white;
-  }
-  
-  h2 {
-    font-family: Market-Deco;
-    color: white;
-  }
-  
-  p {
-    font-family: Roboto;
-    color: white;
-  }
-  
-   /* Buttons */
-   .btn-secondary {
-    background-color: var(--bs-secondary) !important;
-    border: none;
-  }
-  
-  .btn-dark {
-    background-color: var(--bs-dark) !important;
-    border: none;
-  }
-  
-  
-   
+body {
+  background-color: var(--bs-dark);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonts */
+
+
+/* Text */
+h1 {
+  font-family: Market-Deco;
+  color: white;
+}
+
+h2 {
+  font-family: Market-Deco;
+  color: white;
+}
+
+p {
+  font-family: Roboto;
+  color: white;
+}
+
+/* Buttons */
+.btn-secondary {
+  background-color: var(--bs-secondary) !important;
+  border: none;
+}
+
+.btn-dark {
+  background-color: var(--bs-dark) !important;
+  border: none;
+}
+
+.Toplogo {
+  height: 141px;
+  width: 211px;
+}
+
+.Topbar {
+  background-color: #E00095;
+  height: 125px;
+}
+
+.loginBTN {
+  margin-top: -5%;
+  margin-right: -75%;
+  border-radius: 50%
+}
+
+.registerBTN {
+  margin-top: -3%;
+  margin-right: -90%;
+}
+
+.backgroundPic {
+  width: 1860px;
+  height: 750px;
+  margin-top: 1.6%;
+}
+
+.underlining {
+  margin-top: 5%;
+}
+
+.pink-line{
+  background-color: var(--bs-secondary);
+  height: .2rem;
+}
+
+.Cards {
+  width: 80%;
+  margin: 3%;
+}
+
+.AnthonyCard {
+background-color: #098EC3
+}
+
+.TrevorCard {
+background-color: #15B6F4;
+}
+
+.TaylorCard {
+background-color: #A8166A;
+}
+
+.footer {
+  margin-top: auto
+}
+
+.content-wrap {
+  padding-bottom: 1.8rem; 
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  height: 25vh;
+  display:flex; 
+  flex-direction:column; 
+}
+
+.constrain {
+  width: 80vw;
+}
+
+.body {
+  overflow: hidden;
+}
