@@ -1,18 +1,14 @@
 import '../assets/CSS/aboutpage.css';
-import Disc from '../assets/images/showyourgroove-halflogo.png';
 import background from '../assets/images/showyourgroove-header';
 import cardPlaceholder from '../assets/images/showyourgroove-logo.png';
-import { Button, Card, CardGroup } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Card, CardGroup } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import Navbar from '../components/Navbar';
 
 const AboutUs = () => {
     return (
         <body className='body'>
-            <div>
-                <h1 className='Topbar text-dark'>HOME ABOUT <img src={Disc} className='Toplogo' /> CHAT SUPPORT</h1>
-                <h1 className='loginBTN'><Button variant='dark'>LOGIN</Button></h1>
-                <h1 className='registerBTN'><Button variant='dark'>REGISTER</Button></h1>
-            </div>
+            <Navbar />
             <div>
                 <img src={background} className='backgroundPic' />
             </div>
@@ -87,9 +83,7 @@ const AboutUs = () => {
             </div>
             <div className='App '>
                 <footer className='footer content-wrap'>
-                    <h1 className='Topbar text-dark'>HOME ABOUT <img src={Disc} className='Toplogo' /> CHAT SUPPORT</h1>
-                    <h1 className='loginBTN'><Button className='border-radius: 50%' variant='dark'>LOGIN</Button></h1>
-                    <h1 className='registerBTN'><Button variant='dark'>REGISTER</Button></h1>
+                    <Navbar />
                 </footer>
             </div>
         </body>
