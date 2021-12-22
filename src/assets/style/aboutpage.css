@@ -18,17 +18,25 @@ body {
   padding: 0;
 }
 
-/* Fonts */
+ /* Fonts */
+ @font-face {
+  font-family: MarketDeco;
+  src: url(../fonts/market_deco/MarketDeco.ttf);
+}
 
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/roboto/Roboto-Regular.ttf);
+}
 
 /* Text */
 h1 {
-  font-family: Market-Deco;
+  font-family: MarketDeco;
   color: white;
 }
 
 h2 {
-  font-family: Market-Deco;
+  font-family: MarketDeco;
   color: white;
 }
 
