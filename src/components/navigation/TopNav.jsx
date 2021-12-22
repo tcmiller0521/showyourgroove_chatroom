@@ -6,7 +6,7 @@ import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 
 const TopNav = () => {
     return (
-        <Navbar className="bg-secondary pb-1" expand="lg">
+        <Navbar className="bg-secondary pb-1" expand="lg" >
     <Container fluid className="d-flex justify-content-center">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Row>
@@ -16,7 +16,7 @@ const TopNav = () => {
                         <Nav.Link href="#home">
                             <h2 className="text-dark py-3">Home</h2>
                         </Nav.Link>
-                        <Nav.Link href="#home">
+                        <Nav.Link href="/aboutus">
                             <h2 className="text-dark py-3">About</h2>
                         </Nav.Link>
                     </Nav>
@@ -28,10 +28,10 @@ const TopNav = () => {
             <Col>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">
+                        <Nav.Link href="/firstchatroom">
                             <h2 className="text-dark py-3">Chat</h2>
                         </Nav.Link>
-                        <Nav.Link href="#home">
+                        <Nav.Link href="/support">
                             <h2 className="text-dark py-3">Support</h2>
                         </Nav.Link>
                     </Nav>
