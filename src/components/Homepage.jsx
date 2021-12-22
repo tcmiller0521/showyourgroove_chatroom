@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import '../assets/style/homepage.css'
+import HomepageHeader from "./homepage/HomepageHeader";
+import TopNav from "./navigation/TopNav";
+import BrowseChatRooms from "./homepage/BrowseChatrooms";
+import CreateChatroom from "./homepage/CreateChatroom";
+import ShareYourStyleCarousel from "./homepage/HomepageCarousel";
+import Footer from './navigation/Footer';
 
 const Homepage = () => {
     return (
         <body>
-            <h1>This is the homepage</h1>
-            <p>How abou this</p>
-            <Link to="/aboutus">About Us</Link>
-            <Link to="/firstchatroom">Chatroom</Link>
+            <TopNav />
+            <HomepageHeader />
+            <BrowseChatRooms />
+            <CreateChatroom />
+            <ShareYourStyleCarousel />
+            <Footer />
         </body>
     )
 }
