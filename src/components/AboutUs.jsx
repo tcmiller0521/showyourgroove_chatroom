@@ -10,7 +10,7 @@ const AboutUs = () => {
         <body className='body'>
             <Navbar />
             <div>
-                <img src={background} className='backgroundPic' />
+                <img src={background} className='backgroundPic' alt='' />
             </div>
             <div>
                 <Container className='underlining'>
@@ -47,12 +47,12 @@ const AboutUs = () => {
             </div>
             <div>
                 <Container fluid className='constrain'>
-                    <CardGroup>
+                    <CardGroup className='text-light'>
                         <Card className='Cards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='AnthonyCard'>
                                 <Card.Title>Anthony Girone</Card.Title>
-                                <Card.Text className='text-dark'>
+                                <Card.Text>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -62,7 +62,7 @@ const AboutUs = () => {
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TrevorCard'>
                                 <Card.Title>Trevor Little</Card.Title>
-                                <Card.Text className='text-dark'>
+                                <Card.Text>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
@@ -72,7 +72,7 @@ const AboutUs = () => {
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TaylorCard'>
                                 <Card.Title>Taylor Miller</Card.Title>
-                                <Card.Text className='text-dark'>
+                                <Card.Text>
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
                                 </Card.Text>
