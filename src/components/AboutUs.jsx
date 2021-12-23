@@ -1,4 +1,4 @@
-import '../assets/style/aboutpage.css';
+import './aboutPage/aboutpage.css'
 import background from '../assets/images/showyourgroove-header';
 import cardPlaceholder from '../assets/images/showyourgroove-logo.png';
 import { Card, CardGroup } from 'react-bootstrap';

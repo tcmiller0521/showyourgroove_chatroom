@@ -1,0 +1,100 @@
+
+  
+  body {
+    /* display: inline-block;  */
+    background-color: var(--bs-dark) !important;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    /* display: flex;
+    background-image: url("../images/AdobeStock_285899549.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: center;
+    padding: 1px;
+    height: 56rem; */
+  }
+  
+  
+
+  /* // test CSS. for chatroom */
+  
+  .wrapper {
+    border: 2px solid var(--bs-secondary) !important;
+    /* background-image: url('../images/AdobeStock_285899549.jpeg');
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    /* background-position: center;  */
+    display: flex;
+    /* width: 100vw;
+    height: 100vh; */
+
+    /* align-items: center; */
+  }
+
+  .bg-image {
+    background-image: url('../../assets/images/Background2.jpg');
+    height: 100vh;
+  }
+
+  .test {
+    width: 100;
+  }
+
+  /* ROOMS COMPONENT STYLE */
+  .rooms {
+    border: 2px solid var(--bs-secondary) !important;
+    width: 100%;
+  }
+
+  .roomsHead {
+    background: var(--bs-info) !important;
+    border-radius: 25px;
+    margin: 15px 0px;
+  }
+
+  .roomsHead h1 {
+    margin: auto;
+  }
+
+  .roomsContainer {
+    border: 2px solid var(--bs-info) !important;
+    border-radius: 25px;
+    height: 22.5rem;
+    margin: 1rem 0;
+  }
+
+  .mainChat {
+    border: 2px solid blue;
+    
+    width: 770px;
+    height: 895px;
+    margin-right: auto;
+  }
+
+  .chatHead {
+    background: var(--bs-info) !important;
+    border-radius: 25px;
+    margin: 15px 0px;
+  }
+
+  .chatHead h1 {
+    margin: auto;
+  }
+   
+  .chatFeed {
+    border: 2px solid var(--bs-info) !important;
+    border-radius: 25px;
+    /* width: 80%; */
+    height: 45rem;
+    margin: 1rem 0;
+  }
+
+  .chatPop {
+    border: 2px solid var(--bs-info) !important;
+    border-radius: 25px;
+    /* width: 20%; */
+    height: 22.5rem;
+    margin: 1rem 0;
+  }
