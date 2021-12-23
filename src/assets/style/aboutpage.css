@@ -24,8 +24,7 @@ body {
 /* Text */
 h1 {
   font-family: Market-Deco;
-  src: ;
-  color: white;
+  src: url(../fonts/market_deco/MarketDeco.ttf);
 }
 
 h2 {
