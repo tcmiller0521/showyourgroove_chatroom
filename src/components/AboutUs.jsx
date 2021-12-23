@@ -3,12 +3,13 @@ import background from '../assets/images/showyourgroove-header';
 import cardPlaceholder from '../assets/images/showyourgroove-logo.png';
 import { Card, CardGroup } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import Navbar from '../components/Navbar';
+import TopNav from './navigation/TopNav';
+import Footer from './navigation/Footer';
 
 const AboutUs = () => {
     return (
         <body className='body'>
-            <Navbar />
+            <TopNav />
             <div>
                 <img src={background} className='backgroundPic' alt='' />
             </div>
@@ -47,7 +48,7 @@ const AboutUs = () => {
             </div>
             <div>
                 <Container fluid className='constrain'>
-                    <CardGroup className='text-light'>
+                    <CardGroup className='text-light mb-5'>
                         <Card className='Cards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='AnthonyCard'>
@@ -81,11 +82,7 @@ const AboutUs = () => {
                     </CardGroup>
                 </Container>
             </div>
-            <div className='App '>
-                <footer className='footer content-wrap'>
-                    <Navbar />
-                </footer>
-            </div>
+         <Footer />
         </body>
     )
 }
