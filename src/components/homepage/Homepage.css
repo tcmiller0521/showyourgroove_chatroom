@@ -1,0 +1,35 @@
+
+  /* Navbar */
+
+  .topNav {
+    height: 100px;
+  }
+
+  .columns {
+    border:#1D1B1C 1px solid;
+  }
+
+.homepage-header {
+  background-image: url(../../assets/images/showyourgroove-homeheader.png);
+  height: 80vh;
+  width: 100%;
+}
+
+.containers {
+  width: 90vw;
+}
+
+.pink-line{
+  background-color: var(--bs-secondary);
+  height: .2rem;
+}
+  
+.carousel-text {
+  height: 10rem;
+  background-color: var(--bs-primary);
+}
+   
+.card-border {
+  border: var(--bs-success) .15rem solid;
+  border-radius: 1rem;
+}

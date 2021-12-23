@@ -1,14 +1,15 @@
-import '../assets/style/aboutpage.css';
+import './aboutPage/aboutpage.css'
 import background from '../assets/images/showyourgroove-header';
 import cardPlaceholder from '../assets/images/showyourgroove-logo.png';
 import { Card, CardGroup } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import Navbar from '../components/Navbar';
+import TopNav from './navigation/TopNav';
+import Footer from './navigation/Footer';
 
 const AboutUs = () => {
     return (
         <body className='aboutbody'>
-            <Navbar />
+            <TopNav />
             <div>
                 <img src={background} className='aboutbackgroundPic' alt='' />
             </div>
@@ -57,7 +58,7 @@ QUISQUE LUCTUS NON VELIT ID ELEMENTUM. NULLA ET IMPERDIET TORTOR. ETIAM SUSCIPIT
             </div>
             <div>
                 <Container fluid className='aboutconstrain'>
-                    <CardGroup className='text-light'>
+                    <CardGroup className='text-light mb-5'>
                         <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='AnthonyCard'>
@@ -91,11 +92,7 @@ QUISQUE LUCTUS NON VELIT ID ELEMENTUM. NULLA ET IMPERDIET TORTOR. ETIAM SUSCIPIT
                     </CardGroup>
                 </Container>
             </div>
-            <div className='aboutApp'>
-                <footer className='aboutfooter aboutcontent-wrap'>
-                    <Navbar />
-                </footer>
-            </div>
+         <Footer />
         </body>
     )
 }
