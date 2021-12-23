@@ -51,22 +51,22 @@ p {
   border: none;
 }
 
-.backgroundPic {
+.aboutbackgroundPic {
   width: 1860px;
   height: 750px;
   margin-top: 1.6%;
 }
 
-.underlining {
+.aboutunderlining {
   margin-top: 5%;
 }
 
-.pink-line{
+.aboutpink-line{
   background-color: var(--bs-secondary);
   height: .2rem;
 }
 
-.Cards {
+.aboutCards {
   width: 80%;
   margin: 3%;
 }
@@ -113,20 +113,20 @@ background-color: #A8166A;
   background: transparent;
 }
 
-.centernames {
+.aboutcenternames {
   width: 100%;
   border-radius: 100px;
 }
 
-.footer {
+.aboutfooter {
   margin-top: auto
 }
 
-.content-wrap {
+.aboutcontent-wrap {
   padding-bottom: 1.8rem; 
 }
 
-.App {
+.aboutApp {
   text-align: center;
   position: relative;
   height: 25vh;
@@ -134,10 +134,10 @@ background-color: #A8166A;
   flex-direction:column; 
 }
 
-.constrain {
+.aboutconstrain {
   width: 80vw;
 }
 
-.body {
+.aboutbody {
   overflow: hidden;
 }

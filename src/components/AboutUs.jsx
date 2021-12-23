@@ -7,24 +7,24 @@ import Navbar from '../components/Navbar';
 
 const AboutUs = () => {
     return (
-        <body className='body'>
+        <body className='aboutbody'>
             <Navbar />
             <div>
-                <img src={background} className='backgroundPic' alt='' />
+                <img src={background} className='aboutbackgroundPic' alt='' />
             </div>
             <div>
-                <Container className='underlining'>
+                <Container className='aboutunderlining'>
                     <Row>
                         <h1>WHY SHARE YOUR GROOVE?</h1>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col lg="6" md="9" sm="10" className="pink-line mb-4"></Col>
+                        <Col lg="6" md="9" sm="10" className="aboutpink-line mb-4"></Col>
                     </Row>
                 </Container>
             </div>
             <br />
-            <Container fluid className='constrain'>
-                <h1 className='h1'>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MORBI PLACERAT FRINGILLA MAURIS, CONDIMENTUM TINCIDUNT FELIS FRINGILLA NON. 
+            <Container fluid className='aboutconstrain'>
+                <h1>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MORBI PLACERAT FRINGILLA MAURIS, CONDIMENTUM TINCIDUNT FELIS FRINGILLA NON. 
 
 ALIQUAM VITAE EST MOLLIS TORTOR FERMENTUM MAXIMUS VITAE AT RISUS. IN EGESTAS VELIT ET CONSEQUAT MAXIMUS. PELLENTESQUE HABITANT 
 
@@ -46,53 +46,53 @@ QUISQUE LUCTUS NON VELIT ID ELEMENTUM. NULLA ET IMPERDIET TORTOR. ETIAM SUSCIPIT
             </Container>
             <br />
             <div>
-                <Container className='underlining'>
+                <Container className='aboutunderlining'>
                     <Row>
                         <h1>ABOUT THE DEVS</h1>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col lg="4" md="6" sm="7" className="pink-line mb-4"></Col>
+                        <Col lg="4" md="6" sm="7" className="aboutpink-line mb-4"></Col>
                     </Row>
                 </Container>
             </div>
             <div>
-                <Container fluid className='constrain'>
+                <Container fluid className='aboutconstrain'>
                     <CardGroup className='text-light'>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='AnthonyCard'>
-                                <Card.Title className="AnthonyOutline centernames">ANTHONY GIRONE</Card.Title>
+                                <Card.Title className="AnthonyOutline aboutcenternames"><h1>ANTHONY GIRONE</h1></Card.Title>
                                 <Card.Text className="AnthonyOutline">
                                    <h1> Some quick example text to build on the card title and make up the bulk of
                                     the card's content. </h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TrevorCard'>
-                                <Card.Title className="TrevorOutline centernames">TREVOR LITTLE</Card.Title>
+                                <Card.Title className="TrevorOutline aboutcenternames"><h1>TREVOR LITTLE</h1></Card.Title>
                                 <Card.Text className="TrevorOutline">
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                   <h1>Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TaylorCard'>
-                                <Card.Title className='TaylorOutline centernames'>TAYLOR MILLER</Card.Title>
+                                <Card.Title className='TaylorOutline aboutcenternames'><h1>TAYLOR MILLER</h1></Card.Title>
                                 <Card.Text className='TaylorOutline'>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    <h1>Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </CardGroup>
                 </Container>
             </div>
-            <div className='App '>
-                <footer className='footer content-wrap'>
+            <div className='aboutApp'>
+                <footer className='aboutfooter aboutcontent-wrap'>
                     <Navbar />
                 </footer>
             </div>
