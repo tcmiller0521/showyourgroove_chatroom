@@ -8,74 +8,84 @@ import Footer from './navigation/Footer';
 
 const AboutUs = () => {
     return (
-        <body className='body'>
+        <body className='aboutbody'>
             <TopNav />
             <div>
-                <img src={background} className='backgroundPic' alt='' />
+                <img src={background} className='aboutbackgroundPic' alt='' />
             </div>
             <div>
-                <Container className='underlining'>
+                <Container className='aboutunderlining'>
                     <Row>
                         <h1>WHY SHARE YOUR GROOVE?</h1>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col lg="6" md="9" sm="10" className="pink-line mb-4"></Col>
+                        <Col lg="6" md="9" sm="10" className="aboutpink-line mb-4"></Col>
                     </Row>
                 </Container>
             </div>
             <br />
-            <Container fluid className='constrain'>
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat fringilla mauris, condimentum tincidunt felis fringilla non.
-                    Aliquam vitae est mollis tortor fermentum maximus vitae at risus. In egestas velit et consequat maximus. Pellentesque habitant
-                    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla congue, neque sodales sollicitudin faucibus, nulla
-                    arcu ultrices diam, sed faucibus felis enim ac neque. Nunc laoreet porta gravida. Vestibulum consectetur, est ac fringilla rhoncus,
-                    tellus enim aliquet quam, sed scelerisque est nisl a ligula. Vestibulum dapibus nisi ligula. Phasellus suscipit justo arcu, ut pretium
-                    lacus rhoncus id. Praesent imperdiet dictum orci quis mattis. Nullam sit amet ultrices nisl, a laoreet leo. Nullam at velit at orci
-                    rutrum tempor in in ipsum. Quisque aliquam justo at lorem accumsan, ut vulputate lectus pretium. Curabitur at lacinia purus,
-                    mollis ullamcorper mauris. Suspendisse enim nibh, auctor id magna sit amet, malesuada imperdiet erat. In hac habitasse platea dictumst. Sed nisl neque, ultricies a dui a, efficitur ornare mi. Ut accumsan augue id magna auctor rhoncus.
-                    Quisque luctus non velit id elementum. Nulla et imperdiet tortor. Etiam suscipit posuere maximus. Suspendisse convallis erat vel nisl venenatis condimentum.</h1>
+            <Container fluid className='aboutconstrain'>
+                <h1>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MORBI PLACERAT FRINGILLA MAURIS, CONDIMENTUM TINCIDUNT FELIS FRINGILLA NON. 
+
+ALIQUAM VITAE EST MOLLIS TORTOR FERMENTUM MAXIMUS VITAE AT RISUS. IN EGESTAS VELIT ET CONSEQUAT MAXIMUS. PELLENTESQUE HABITANT 
+
+MORBI TRISTIQUE SENECTUS ET NETUS ET MALESUADA FAMES AC TURPIS EGESTAS. NULLA CONGUE, NEQUE SODALES SOLLICITUDIN FAUCIBUS, NULLA 
+
+ARCU ULTRICES DIAM, SED FAUCIBUS FELIS ENIM AC NEQUE. NUNC LAOREET PORTA GRAVIDA. VESTIBULUM CONSECTETUR, EST AC FRINGILLA RHONCUS, 
+
+TELLUS ENIM ALIQUET QUAM, SED SCELERISQUE EST NISL A LIGULA. VESTIBULUM DAPIBUS NISI LIGULA. PHASELLUS SUSCIPIT JUSTO ARCU, UT PRETIUM 
+
+LACUS RHONCUS ID. PRAESENT IMPERDIET DICTUM ORCI QUIS MATTIS. NULLAM SIT AMET ULTRICES NISL, A LAOREET LEO. NULLAM AT VELIT AT ORCI 
+
+RUTRUM TEMPOR IN IN IPSUM. QUISQUE ALIQUAM JUSTO AT LOREM ACCUMSAN, UT VULPUTATE LECTUS PRETIUM. CURABITUR AT LACINIA PURUS, 
+
+MOLLIS ULLAMCORPER MAURIS. SUSPENDISSE ENIM NIBH, AUCTOR ID MAGNA SIT AMET, MALESUADA IMPERDIET ERAT. IN HAC HABITASSE PLATEA DICTUMST. SED NISL NEQUE, ULTRICIES A DUI A, EFFICITUR ORNARE MI. UT ACCUMSAN AUGUE ID MAGNA AUCTOR RHONCUS. 
+
+QUISQUE LUCTUS NON VELIT ID ELEMENTUM. NULLA ET IMPERDIET TORTOR. ETIAM SUSCIPIT POSUERE MAXIMUS. SUSPENDISSE CONVALLIS ERAT VEL NISL VENENATIS CONDIMENTUM. 
+
+</h1>
             </Container>
             <br />
             <div>
-                <Container className='underlining'>
+                <Container className='aboutunderlining'>
                     <Row>
                         <h1>ABOUT THE DEVS</h1>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col lg="4" md="6" sm="7" className="pink-line mb-4"></Col>
+                        <Col lg="4" md="6" sm="7" className="aboutpink-line mb-4"></Col>
                     </Row>
                 </Container>
             </div>
             <div>
-                <Container fluid className='constrain'>
+                <Container fluid className='aboutconstrain'>
                     <CardGroup className='text-light mb-5'>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='AnthonyCard'>
-                                <Card.Title>Anthony Girone</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title className="AnthonyOutline aboutcenternames"><h1>ANTHONY GIRONE</h1></Card.Title>
+                                <Card.Text className="AnthonyOutline">
+                                   <h1> Some quick example text to build on the card title and make up the bulk of
+                                    the card's content. </h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TrevorCard'>
-                                <Card.Title>Trevor Little</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title className="TrevorOutline aboutcenternames"><h1>TREVOR LITTLE</h1></Card.Title>
+                                <Card.Text className="TrevorOutline">
+                                   <h1>Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='Cards'>
+                        <Card className='aboutCards'>
                             <Card.Img variant="top" src={cardPlaceholder} />
                             <Card.Body className='TaylorCard'>
-                                <Card.Title>Taylor Miller</Card.Title>
-                                <Card.Text>
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title className='TaylorOutline aboutcenternames'><h1>TAYLOR MILLER</h1></Card.Title>
+                                <Card.Text className='TaylorOutline'>
+                                    <h1>Some quick example text to build on the card title and make up the bulk of
+                                    the card's content.</h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
