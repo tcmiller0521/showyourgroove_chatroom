@@ -61,11 +61,6 @@ p {
   width: 211px;
 }
 
-.Topbar {
-  background-color: #E00095;
-  height: 125px;
-}
-
 .loginBTN {
   margin-top: -5%;
   margin-right: -75%;
@@ -109,9 +104,6 @@ background-color: #15B6F4;
 background-color: #A8166A;
 }
 
-.footer {
-  margin-top: auto
-}
 
 .content-wrap {
   padding-bottom: 1.8rem; 
