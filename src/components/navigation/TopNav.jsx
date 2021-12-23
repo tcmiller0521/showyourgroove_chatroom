@@ -13,7 +13,7 @@ const TopNav = () => {
             <Col>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">
+                        <Nav.Link href="/#">
                             <h2 className="text-dark py-3">Home</h2>
                         </Nav.Link>
                         <Nav.Link href="/aboutus">
