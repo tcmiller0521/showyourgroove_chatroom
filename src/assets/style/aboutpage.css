@@ -19,16 +19,19 @@ body {
 }
 
 /* Fonts */
-
+@font-face {
+  font-family: MarketDeco;
+  src: url(../fonts/market_deco/MarketDeco.ttf);
+}
 
 /* Text */
 h1 {
-  font-family: Market-Deco;
+  font-family: MarketDeco;
   src: url(../fonts/market_deco/MarketDeco.ttf);
 }
 
 h2 {
-  font-family: Market-Deco;
+  font-family: MarketDeco;
   color: white;
 }
 

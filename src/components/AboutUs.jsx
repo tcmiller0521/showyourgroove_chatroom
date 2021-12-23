@@ -24,7 +24,7 @@ const AboutUs = () => {
             </div>
             <br />
             <Container fluid className='constrain'>
-                <h1>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MORBI PLACERAT FRINGILLA MAURIS, CONDIMENTUM TINCIDUNT FELIS FRINGILLA NON. 
+                <h1 className='h1'>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. MORBI PLACERAT FRINGILLA MAURIS, CONDIMENTUM TINCIDUNT FELIS FRINGILLA NON. 
 
 ALIQUAM VITAE EST MOLLIS TORTOR FERMENTUM MAXIMUS VITAE AT RISUS. IN EGESTAS VELIT ET CONSEQUAT MAXIMUS. PELLENTESQUE HABITANT 
 
@@ -63,8 +63,8 @@ QUISQUE LUCTUS NON VELIT ID ELEMENTUM. NULLA ET IMPERDIET TORTOR. ETIAM SUSCIPIT
                             <Card.Body className='AnthonyCard'>
                                 <Card.Title className="AnthonyOutline centernames">ANTHONY GIRONE</Card.Title>
                                 <Card.Text className="AnthonyOutline">
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                   <h1> Some quick example text to build on the card title and make up the bulk of
+                                    the card's content. </h1>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
