@@ -1,0 +1,20 @@
+.Topbar {
+    background-color: #E00095;
+    height: 125px;
+}
+
+.loginBTN {
+    margin-top: -5%;
+    margin-right: -75%;
+    border-radius: 100px;
+}
+
+.registerBTN {
+    margin-top: -3%;
+    margin-right: -90%;
+}
+
+.Toplogo {
+    height: 141px;
+    width: 211px;
+}

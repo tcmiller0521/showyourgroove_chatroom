@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
 import Disc from '../assets/images/showyourgroove-halflogo.png';
+import '../assets/style/Navbar.css';
 
 const Navbar = () => {
     return (
