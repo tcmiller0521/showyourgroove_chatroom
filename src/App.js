@@ -1,7 +1,8 @@
 import { Route, Switch } from 'react-router-dom'
 import Homepage from './components/Homepage';
-import FirstChatroom from './components/publicRooms/FirstChatroom';
+import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
+import './App.css'
 
 function App() {
   return (
