@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { Row, Col, Container, Image } from 'react-bootstrap'
 
-import ChatNav from '../../navigation/ChatNav'
+import ChatNav from '../navigation/ChatNav'
 import ChatRoom from './ChatRoom'
 import Rooms from '../rooms/Rooms'
 import Social from '../rooms/Social'
-import Private from '../../rooms/Private'
-import Online from '../../rooms/Online'
+import Private from '../rooms/Private'
+import Online from '../rooms/Online'
 // css import
-import '../../chatrooms/chatroom.css'
-import Background from '../../../assets/images/Background2.jpg'
+import '../../assets/style/chatroom.css'
+import Background from '../../assets/images/Background2.jpg'
 
 
 // const FirstChatroom = () => {
