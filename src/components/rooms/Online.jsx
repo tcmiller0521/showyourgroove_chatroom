@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {
     Row, 
     Col, 
@@ -7,31 +7,27 @@ import {
     Button 
 } from 'react-bootstrap'
 
-function Social({setSocial}) {
-    
+function Online({setOnline}) {
     return (
         <div>
             
-                {/* Chatroom Header */}
                 <Row className='roomsHead'>
                     <Col>
-                        <h1>Friends</h1>
+                        <h1>Online</h1>
                     </Col>
                 </Row>
                 <Row className='roomsContainer'>
                     {/* Public rooms list */}
-                    <Col className='pubNav'></Col> 
+                    <Col className='privateNav'></Col> 
                 </Row>
-                <button 
-                    onClick= {() => {
-                        
-                        setSocial(false);
+                <button
+                    onClick={() => {
+                        setOnline(false);
                     }}>
-                        X
+                        XXXX
                 </button>
-            
         </div>
     )
 }
 
-export default Social
+export default Online

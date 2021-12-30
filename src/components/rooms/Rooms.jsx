@@ -9,10 +9,11 @@ import {
 
 
 
-function Rooms() {
+function Rooms({setRooms}) {
+
     return (
         <div>
-            <Container className='rooms'>
+            
                 {/* Chatroom Header */}
                 <Row className='roomsHead'>
                     <Col>
@@ -23,16 +24,13 @@ function Rooms() {
                     {/* Public rooms list */}
                     <Col className='pubNav'></Col> 
                 </Row>
-                <Row className='roomsHead'>
-                    <Col>
-                        <h1>PRIVATE</h1>
-                    </Col>
-                </Row>
-                <Row className='roomsContainer'>
-                    {/* Public rooms list */}
-                    <Col className='privateNav'></Col> 
-                </Row>
-            </Container>
+                <button
+                    onClick={() => {
+                        setRooms(false);
+                    }}>
+                        XX
+                </button>
+            
         </div>
     )
 }
