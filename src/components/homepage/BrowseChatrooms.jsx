@@ -26,7 +26,7 @@ const BrowseChatRooms = () => {
                     {content.map(RoomInfo => (
                         <Col lg="2" className="my-2 me-4">
                             <Card style={{ width: '18rem' }} className="bg-primary m-3">
-                                <Card.Img variant="top" src={CardImage} />
+                                <Card.Img variant="top" src={RoomInfo.image} />
                                 <Card.Body>
                                     <Card.Title className="pt-2 card-border"><h3>{RoomInfo.title}</h3></Card.Title>
                                     <Card.Text className="card-border pt-3">
