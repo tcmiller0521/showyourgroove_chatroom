@@ -1,4 +1,4 @@
-
+/* 
 .Toplogo {
   height: 141px;
   width: 211px;
@@ -15,22 +15,22 @@
   margin-right: -90%;
 }
 
-.backgroundPic {
+.aboutbackgroundPic {
   width: 1860px;
   height: 750px;
   margin-top: 1.6%;
 }
 
-.underlining {
+.aboutunderlining {
   margin-top: 5%;
 }
 
-.pink-line{
+.aboutpink-line{
   background-color: var(--bs-secondary);
   height: .2rem;
 }
 
-.Cards {
+.aboutCards {
   width: 80%;
   margin: 3%;
 }
@@ -48,11 +48,11 @@ background-color: #A8166A;
 }
 
 
-.content-wrap {
+.aboutcontent-wrap {
   padding-bottom: 1.8rem; 
 }
 
-.App {
+.aboutApp {
   text-align: center;
   position: relative;
   height: 25vh;
@@ -60,10 +60,101 @@ background-color: #A8166A;
   flex-direction:column; 
 }
 
-.constrain {
+.aboutconstrain {
   width: 80vw;
 }
 
-.body {
+.aboutbody {
+  overflow: hidden;
+} */
+
+.aboutbackgroundPic {
+  background-image: url(../../assets/images/showyourgroove-homeheader.png);
+  height: 80vh;
+  width: 100%;
+}
+
+.aboutunderlining {
+  margin-top: 5%;
+}
+
+.aboutpink-line{
+  background-color: var(--bs-secondary);
+  height: .2rem;
+}
+
+.aboutCards {
+  width: 80%;
+  margin: 3%;
+}
+
+.AnthonyCard {
+background-color: #098EC3
+}
+
+.AnthonyOutline {
+  width: fit-content;
+  height: fit-content;
+  line-height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  border: 3px solid #15B6F4;
+  background: transparent;
+}
+
+.TrevorCard {
+background-color: #15B6F4;
+}
+
+.TrevorOutline {
+  width: fit-content;
+  height: fit-content;
+  line-height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  border: 3px solid #58D1FF;
+  background: transparent;
+}
+
+.TaylorCard {
+background-color: #A8166A;
+}
+
+.TaylorOutline {
+  width: fit-content;
+  height: fit-content;
+  line-height: 50px;
+  border-radius: 30px;
+  text-align: center;
+  border: 3px solid #E00095;
+  background: transparent;
+}
+
+.aboutcenternames {
+  width: 100%;
+  border-radius: 100px;
+}
+
+.aboutfooter {
+  margin-top: auto
+}
+
+.aboutcontent-wrap {
+  padding-bottom: 1.8rem; 
+}
+
+.aboutApp {
+  text-align: center;
+  position: relative;
+  height: 25vh;
+  display:flex; 
+  flex-direction:column; 
+}
+
+.aboutconstrain {
+  width: 80vw;
+}
+
+.aboutbody {
   overflow: hidden;
 }
