@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit';
 import ContentReducer from '../contentSlice';
 
 export const store = configureStore({
