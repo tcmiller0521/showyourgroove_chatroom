@@ -4,6 +4,8 @@ import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
 import LoginPage from './components/Login';
 import './App.css'
+import RegisterPage from './components/Register';
+import Footer from './components/navigation/Footer';
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/register">
+          <RegisterPage />
         </Route>
       </Switch>
     </>
