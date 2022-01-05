@@ -24,7 +24,7 @@ const BrowseChatRooms = () => {
             <Container fluid className="containers d-flex justify-content-center mb-5">
                 <Row className="containers d-flex justify-content-center">
                     {content.map(RoomInfo => (
-                        <Col lg="2" className="my-2 me-4">
+                        <Col lg="2" className="my-2 me-5">
                             <Card style={{ width: '18rem' }} className="bg-primary m-3">
                                 <Card.Img variant="top" src={RoomInfo.image} />
                                 <Card.Body>
