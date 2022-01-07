@@ -1,11 +1,16 @@
+import './App.css'
+
 import { Route, Switch } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+
 import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
 import LoginPage from './components/Login';
-import './App.css'
 import RegisterPage from './components/Register';
-import Footer from './components/navigation/Footer';
+
+
 
 function App() {
   return (

@@ -1,12 +1,15 @@
-import Container from 'react-bootstrap/Container'
-import { Row, Col } from 'react-bootstrap'
-import { Image } from "react-bootstrap";
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import React, {useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 
 const LoginCard = () => {
+    
+
     return (
         <Card style={{ width: '35rem', height: '40rem' }} className="bg-dark mt-5 pt-4">
             <Card.Body>

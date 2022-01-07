@@ -1,11 +1,11 @@
 import TopNav from "./navigation/TopNav";
 import Footer from "./navigation/Footer";
 import Container from 'react-bootstrap/Container'
-import './authentication/login.css'
+import './auth/login.css'
 import { Row, Col } from 'react-bootstrap'
 import { Image } from "react-bootstrap";
 import RegisterWelcome from '../assets/images/register_welcome-03.png'
-import RegisterCard from "./authentication/registerCard";
+import RegisterCard from "./auth/registerCard";
 
 const RegisterPage = () => {
     return (
