@@ -1,0 +1,22 @@
+body {
+    overflow: hidden;
+}
+
+.supportbg {
+    background-image: url(../../assets/images/showyourgroove-homeheader.png);
+    height: 89vh;
+    width: 100vw;
+}
+
+.accordionseparate {
+    margin-top: 10vh;
+}
+
+.bodycontainer {
+    width: 90vw;
+    height: fit-content;
+}
+
+.hiddenformbutton {
+    display: none;
+}
