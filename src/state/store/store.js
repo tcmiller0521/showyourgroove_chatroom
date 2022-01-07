@@ -1,12 +1,13 @@
-import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
-import rootReducer from '../../reducers'
+import { configureStore } from '@reduxjs/toolkit';
 import ContentReducer from '../contentSlice';
+import authReducer from '../authSlice';
+import messageReducer from '../messageSlice';
 
 
 export const store = configureStore({
     reducer:{
         content: ContentReducer,
-        rootReducer,
+        auth: authReducer,
+        message: messageReducer,
     }
 });
