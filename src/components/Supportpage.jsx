@@ -1,20 +1,32 @@
 import './supportPage/supportpage.css';
 import TopNav from './navigation/TopNav';
-import { Accordion, Container, Form } from 'react-bootstrap';
+import { Accordion, Container, Form, Button } from 'react-bootstrap';
 import Footer from './navigation/Footer';
+import MyVerticallyCenteredModal from '../components/supportPage/supportModal';
+import { useState } from 'react';
 
-function handleSubmit(e) {
-    e.preventDefault()
-}
+
 
 const Support = () => {
+    const [email, setEmail] = useState();
+    const [query, setQuery] = useState();
+    const [modalShow, setModalShow] = useState(false);
+    const handleShow = () => setModalShow(true);
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        setEmail(e.target.email.value)
+        setQuery(e.target.query.value)
+        handleShow();
+    }
+
     return (
         <>
             <body className='supportbg'>
                 <TopNav />
                 <div>
                     <Container className='bodycontainer'>
-                        <Accordion className='accordionseparate' defaultActiveKey={['0']} alwaysOpen>
+                        <Accordion className='accordionseparate' defaultActiveKey={['0']} alwaysopen='true'>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>FAQ:</Accordion.Header>
                                 <Accordion.Body>
@@ -43,9 +55,10 @@ const Support = () => {
                                     Email: Showyourgroove@support.net
                                     <br />
                                     <Form onSubmit={handleSubmit}>
-                                        <Form.Control Placeholder='Enter your email'></Form.Control>
-                                        <Form.Control placeholder='Tell us about your problem'></Form.Control>
+                                        <Form.Control name='email' placeholder='Enter your email'></Form.Control>
+                                        <Form.Control name='query' placeholder='Tell us about your problem'></Form.Control>
                                         <input type='submit' className='hiddenformbutton' />
+                                        <MyVerticallyCenteredModal email={email} query={query} show={modalShow} onHide={() => setModalShow(false)} />
                                     </Form>
                                     Phone: (555)555-5555
                                 </Accordion.Body>
@@ -53,7 +66,6 @@ const Support = () => {
                         </Accordion>
                     </Container>
                 </div>
-
             </body>
             <Footer />
         </>
