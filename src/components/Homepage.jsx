@@ -9,14 +9,14 @@ import Footer from './navigation/Footer';
 
 const Homepage = () => {
     return (
-        <body>
+        <>
             <TopNav />
             <HomepageHeader />
             <BrowseChatRooms />
             <CreateChatroom />
             <ShareYourStyleCarousel />
             <Footer />
-        </body>
+        </>
     )
 }
 

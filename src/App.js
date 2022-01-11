@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Switch>
-        <Route path exact="/#">
+        <Route path="/">
           <Homepage />
         </Route>
         <Route path="/aboutus">
