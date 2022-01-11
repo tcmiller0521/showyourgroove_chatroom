@@ -15,6 +15,7 @@ import eventBus from '../../common/EventBus';
 
 
 const TopNav = () => {
+
     const [showModeratorBoard, setShowModeratorBoard] = useState(false);
     const [showAdminBoard, setShowAdminBoard] = useState(false);
 
@@ -69,8 +70,16 @@ const TopNav = () => {
                         </Nav.Link>
                     </Navbar.Collapse>
                 </div>
-                <Button href="/login" className="btn-dark me-3">Login</Button>
-                <Button href="/register" className="btn-dark">Register</Button>
+                <Button className="btn-dark me-3">
+                    <Link to="/login" >
+                        Login
+                    </Link>
+                </Button>
+                <Button className="btn-dark">
+                    <Link to="/register" >
+                        Register
+                    </Link>
+                </Button>
                 <NavDropdown title="Profile" id="basic-nav-dropdown">
                     {showModeratorBoard && (
                         <NavDropdown.Item>
@@ -109,7 +118,7 @@ const TopNav = () => {
                                 </a>
                             </NavDropdown.Item>
                         </div>
-                    ) : ( <div>
+                    ) : (<div>
                         <NavDropdown.Item>
                             <Link to="/login">
                                 Login
@@ -130,37 +139,3 @@ const TopNav = () => {
 
 export default TopNav;
 
-<Navbar className="bg-secondary pb-1" expand="lg" >
-    <Container fluid className="d-flex justify-content-center">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Row>
-            <Col>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/#">
-                            <h2 className="text-dark py-3">Home</h2>
-                        </Nav.Link>
-                        <Nav.Link href="/aboutus">
-                            <h2 className="text-dark py-3">About</h2>
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Col>
-            <Col className="d-flex justify-content-center">
-                <Navbar.Brand href="#home"><img src={HalfLogo} /></Navbar.Brand>
-            </Col>
-            <Col>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/firstchatroom">
-                            <h2 className="text-dark py-3">Chat</h2>
-                        </Nav.Link>
-                        <Nav.Link href="/support">
-                            <h2 className="text-dark py-3">Support</h2>
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Col>
-        </Row>
-    </Container>
-</Navbar>
