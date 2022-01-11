@@ -75,9 +75,9 @@ function ChatRoom() {
                         <Stack direction="horizontal" gap={3}>
                             <Form autoComplete='off' onSubmit={submitHandler}>
                                 <Form.Control  className="me-auto" name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/>
-                            </Form>
-                                <Button variant="secondary" type="submit">POST</Button>
                             
+                                <Button variant="secondary" type="submit">POST</Button>
+                            </Form>
                         </Stack>
                         {/* <form autoComplete='off' onSubmit={submitHandler}>
                             <div><input name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/></div>
