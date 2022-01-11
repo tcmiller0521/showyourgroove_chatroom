@@ -5,11 +5,7 @@ import './auth/login.css'
 import { Row, Col } from 'react-bootstrap'
 import { Image } from "react-bootstrap";
 import LoginWelcome from '../assets/images/login_welcome-02.png'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import { Link } from "react-router-dom";
-import LoginCard from './auth/logincard'
+import Login from '../components/auth/logincard'
 
 const LoginPage = () => {
     return (
@@ -21,7 +17,7 @@ const LoginPage = () => {
                         <Image fluid src={LoginWelcome} />
                     </Col>
                     <Col className="d-flex justify-content-center">
-                        <LoginCard />
+                        <Login />
                     </Col>
                 </Row>
             </Container>

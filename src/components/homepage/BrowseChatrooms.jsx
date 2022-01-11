@@ -1,11 +1,10 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import CardImage from '../../assets/images/card_background-01.png'
 import { Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectContent } from '../../state/contentSlice'
-import RoomInfo from '../../assets/contentFiles/Rooms'
+
 
 const BrowseChatRooms = () => {
 

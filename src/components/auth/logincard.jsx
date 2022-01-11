@@ -1,62 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { Formik, Form, ErrorMessage } from "formik";
-import * as Yup from 'yup';
-
-import { login } from '../../state/authSlice';
-import { clearMessage } from '../../state/messageSlice';
-
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-
+import React, { useState, useEffect  } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+import { Formik, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
+import * as Yup from "yup";
 
-const LoginCard = (props) => {
-    const [loading, setLoading] = useState(false);
+import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
-    const { isLoggedIn } = useSelector((state) => state.auth);
-    const { message } = useSelector((state) => state.message);
+import { login } from "../../state/authSlice";
+import { clearMessage } from "../../state/messageSlice";
 
-    const dispatch = useDispatch();
+const Login = (props) => {
+  const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        dispatch(clearMessage());
-    }, [dispatch]);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
 
-    const initialValues = {
-        username: "",
-        password: "",
-    };
+  const dispatch = useDispatch();
 
-    const validationSchema = Yup.object().shape({
-        username: Yup.string().required("This field is required!"),
-        password: Yup.string().required("This field is required!"),
-    });
+  useEffect(() => {
+    dispatch(clearMessage());
+  }, [dispatch]);
 
-    const handleLogin = (formValue) => {
-        const { username, password } = formValue;
-        setLoading(true);
+  const initialValues = {
+    username: "",
+    password: "",
+  };
 
-        dispatch(login({ username, password }))
-            .unwrap()
-            .then(() => {
-                props.history.push("/profile");
-                window.location.reload();
-            })
-            .catch(() => {
-                setLoading(false);
-            });
-    };
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required("This field is required!"),
+    password: Yup.string().required("This field is required!"),
+  });
 
-    if (isLoggedIn) {
-        return <Redirect to="/profile" />;
-    }
+  const handleLogin = (formValue) => {
+    const { username, password } = formValue;
+    setLoading(true);
 
+    dispatch(login({ username, password }))
+      .unwrap()
+      .then(() => {
+        props.history.push("/profile");
+        window.location.reload();
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  };
 
-    return (
-        <Card style={{ width: '35rem', height: '40rem' }} className="bg-dark mt-5 pt-4">
+  if (isLoggedIn) {
+    return <Redirect to="/profile" />;
+  }
+
+  return (
+    <Card style={{ width: '35rem', height: '40rem' }} className="bg-dark mt-5 pt-4">
             <Card.Body>
                 <Card.Title className="my-4 ">
                     <h1>Sign In</h1>
@@ -117,7 +116,8 @@ const LoginCard = (props) => {
                 </Card.Text>
             </Card.Body>
         </Card>
-    )
-}
+  );
+};
 
-export default LoginCard;
+export default Login;
+

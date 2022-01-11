@@ -1,12 +1,49 @@
 import { Nav } from "react-bootstrap"
-import { Navbar } from "react-bootstrap";
+import { Navbar, NavDropdown } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 import { Link } from "react-router-dom";
 
+import React, { useState, useEffect, useCallback } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+
+import { logout } from "../../state/authSlice"
+import eventBus from '../../common/EventBus';
+
+
+
 
 const TopNav = () => {
+    const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+    const [showAdminBoard, setShowAdminBoard] = useState(false);
+
+    const { user: currentUser } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+
+    const logOut = useCallback(() => {
+        dispatch(logout());
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (currentUser) {
+            setShowModeratorBoard(currentUser.roles.includes("ROLE_MODERATOR"));
+            setShowAdminBoard(currentUser.roles.includes("ROLES_ADMIN"));
+        } else {
+            setShowModeratorBoard(false);
+            setShowAdminBoard(false);
+        }
+
+        eventBus.on("logout", () => {
+            logOut();
+        });
+
+        return () => {
+            eventBus.remove("logout");
+        };
+    }, [currentUser, logOut]);
+
+
     return (
         <Navbar className="bg-secondary pb-1 ps-5" expand="lg" >
             <Container fluid className="d-flex justify-content-center ms-5 ps-5">
@@ -34,6 +71,58 @@ const TopNav = () => {
                 </div>
                 <Button href="/login" className="btn-dark me-3">Login</Button>
                 <Button href="/register" className="btn-dark">Register</Button>
+                <NavDropdown title="Profile" id="basic-nav-dropdown">
+                    {showModeratorBoard && (
+                        <NavDropdown.Item>
+                            <Link to="/mod">
+                                Moderator Board
+                            </Link>
+                        </NavDropdown.Item>
+                    )}
+
+                    {showAdminBoard && (
+                        <NavDropdown.Item>
+                            <Link to="/admin">
+                                Admin Board
+                            </Link>
+                        </NavDropdown.Item>
+                    )}
+
+                    {currentUser && (
+                        <NavDropdown.Item>
+                            <Link to="/user">
+                                User
+                            </Link>
+                        </NavDropdown.Item>
+                    )}
+
+                    {currentUser ? (
+                        <div>
+                            <NavDropdown.Item>
+                                <Link to="/profile">
+                                    {currentUser.username}
+                                </Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <a href="/login" onClick={logOut}>
+                                    Logout
+                                </a>
+                            </NavDropdown.Item>
+                        </div>
+                    ) : ( <div>
+                        <NavDropdown.Item>
+                            <Link to="/login">
+                                Login
+                            </Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                            <Link to="/register">
+                                Register
+                            </Link>
+                        </NavDropdown.Item>
+                    </div>
+                    )}
+                </NavDropdown>
             </Container>
         </Navbar>
     )
