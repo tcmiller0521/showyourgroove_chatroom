@@ -24,10 +24,9 @@ function App() {
         <Route path="/firstchatroom">
           <FirstChatroom />
         </Route>
-
         <Route path="/Support">
           <Support />
-
+        </Route>
         <Route path="/login">
           <LoginPage />
         </Route>
