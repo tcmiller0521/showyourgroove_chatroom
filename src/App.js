@@ -1,42 +1,39 @@
-import './App.css'
 import { Route, Switch } from 'react-router-dom'
-import React from 'react'
-
 import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import Profile from './components/user/profile';
-import BoardUser from './components/user/BoardUser';
-import BoardAdmin from './components/user/BoardAdmin';
-import BoardModerator from './components/user/BoardModerator';
 
-import { useState, useEffect, useCallback } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import Support from './components/Supportpage';
 
-import { logout } from "./state/authSlice"
-import eventBus from './common/EventBus';
+import LoginPage from './components/Login';
 
+import './App.css'
+import RegisterPage from './components/Register';
+import Footer from './components/navigation/Footer';
 
 function App() {
-
   return (
     <>
       <Switch>
-        <Route path="/" exact component={Homepage} />
+        <Route path="/" exact>
+          <Homepage />
+        </Route>
         <Route path="/aboutus">
           <AboutUs />
-          </Route>
+        </Route>
         <Route path="/firstchatroom">
           <FirstChatroom />
-        </ Route>
-        <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={RegisterPage} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/user" component={BoardUser} />
-        <Route path="/mod" component={BoardModerator} />
-        <Route path="/admin" component={BoardAdmin} />
+        </Route>
+        <Route path="/Support">
+          <Support />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <Route path="/register">
+          <RegisterPage />
+
+        </Route>
       </Switch>
     </>
   )
