@@ -9,7 +9,7 @@ import Footer from './navigation/Footer';
 const AboutUs = () => {
     return (
         <body className='aboutbody'>
-            {/* <TopNav /> */}
+            <TopNav />
             <div>
                 <AboutHeader />
             </div>

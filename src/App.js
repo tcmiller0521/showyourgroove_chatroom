@@ -3,12 +3,11 @@ import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
 
-import Support from './components/Supportpage';
 
-import LoginPage from './components/Login';
+import LoginPage from './components/LoginPage';
 
 import './App.css'
-import RegisterPage from './components/Register';
+import RegisterPage from './components/RegisterPage';
 import Footer from './components/navigation/Footer';
 
 function App() {
@@ -23,9 +22,6 @@ function App() {
         </Route>
         <Route path="/firstchatroom">
           <FirstChatroom />
-        </Route>
-        <Route path="/Support">
-          <Support />
         </Route>
         <Route path="/login">
           <LoginPage />
