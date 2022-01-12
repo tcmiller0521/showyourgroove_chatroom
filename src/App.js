@@ -3,19 +3,19 @@ import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
 
+import LoginPage from './components/LoginPage';
 import Support from './components/Supportpage';
 
-import LoginPage from './components/Login';
 
 import './App.css'
-import RegisterPage from './components/Register';
+import RegisterPage from './components/RegisterPage';
 import Footer from './components/navigation/Footer';
 
 function App() {
   return (
     <>
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <Homepage />
         </Route>
         <Route path="/aboutus">
@@ -32,7 +32,6 @@ function App() {
         </Route>
         <Route path="/register">
           <RegisterPage />
-
         </Route>
       </Switch>
     </>

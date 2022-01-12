@@ -5,8 +5,43 @@ import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 import { Link } from "react-router-dom";
 
+import React, { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import EventBus from "../../common/EventBus";
+import { logout } from '../../state/authSlice';
+
 
 const TopNav = () => {
+    const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+    const [showAdminBoard, setShowAdminBoard] = useState(false);
+
+    const { user: currentUser } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+
+    const logOut = useCallback(() => {
+        dispatch(logout());
+    }, [dispatch]);
+
+    useEffect(() => {
+        if (currentUser) {
+            setShowModeratorBoard(currentUser.roles.includes("ROLE_MODERATOR"));
+            setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
+        } else {
+            setShowModeratorBoard(false);
+            setShowAdminBoard(false);
+        }
+
+        EventBus.on("logout", () => {
+            logOut();
+        });
+
+        return () => {
+            EventBus.remove("logout");
+        };
+    }, [currentUser, logOut]);
+
+
     return (
         <Navbar className="bg-secondary pb-1 ps-5" expand="lg" >
             <Container fluid className="d-flex justify-content-center ms-5 ps-5">
@@ -41,37 +76,3 @@ const TopNav = () => {
 
 export default TopNav;
 
-<Navbar className="bg-secondary pb-1" expand="lg" >
-    <Container fluid className="d-flex justify-content-center">
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Row>
-            <Col>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/#">
-                            <h2 className="text-dark py-3">Home</h2>
-                        </Nav.Link>
-                        <Nav.Link href="/aboutus">
-                            <h2 className="text-dark py-3">About</h2>
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Col>
-            <Col className="d-flex justify-content-center">
-                <Navbar.Brand href="#home"><img src={HalfLogo} /></Navbar.Brand>
-            </Col>
-            <Col>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/firstchatroom">
-                            <h2 className="text-dark py-3">Chat</h2>
-                        </Nav.Link>
-                        <Nav.Link href="/support">
-                            <h2 className="text-dark py-3">Support</h2>
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Col>
-        </Row>
-    </Container>
-</Navbar>

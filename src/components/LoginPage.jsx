@@ -1,15 +1,11 @@
 import TopNav from "./navigation/TopNav";
 import Footer from "./navigation/Footer";
 import Container from 'react-bootstrap/Container'
-import './authentication/login.css'
+import './auth/login.css'
 import { Row, Col } from 'react-bootstrap'
 import { Image } from "react-bootstrap";
 import LoginWelcome from '../assets/images/login_welcome-02.png'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
-import { Link } from "react-router-dom";
-import LoginCard from './authentication/logincard'
+import Login from './auth/logincard'
 
 const LoginPage = () => {
     return (
@@ -21,7 +17,7 @@ const LoginPage = () => {
                         <Image fluid src={LoginWelcome} />
                     </Col>
                     <Col className="d-flex justify-content-center">
-                        <LoginCard />
+                        <Login />
                     </Col>
                 </Row>
             </Container>

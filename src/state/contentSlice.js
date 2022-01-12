@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import RoomInfo from '../assets/contentFiles/Rooms'
 
 // let cards = []

@@ -1,11 +1,10 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import CardImage from '../../assets/images/card_background-01.png'
 import { Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectContent } from '../../state/contentSlice'
-import RoomInfo from '../../assets/contentFiles/Rooms'
+
 
 const BrowseChatRooms = () => {
 
@@ -25,6 +24,7 @@ const BrowseChatRooms = () => {
                 <Row className="containers d-flex justify-content-center">
                     {content.map((RoomInfo, i) => (
                         <Col key={i} lg="2" className="my-2 me-5">
+<<<<<<< HEAD
                             <Card  style={{ width: '18rem' }} className="bg-primary m-3">
                                 <Card.Img variant="top" src={RoomInfo.image} />
                                 <Card.Body>
@@ -33,6 +33,14 @@ const BrowseChatRooms = () => {
                                         
                                             {RoomInfo.description}
                                        
+=======
+                            <Card style={{ width: '18rem' }} className="bg-primary m-3">
+                                <Card.Img variant="top" src={RoomInfo.image} />
+                                <Card.Body>
+                                    <Card.Title className="pt-2 card-border"><h3>{RoomInfo.title}</h3></Card.Title>
+                                    <Card.Text className="card-border pt-3 text-dark">
+                                            {RoomInfo.description}
+>>>>>>> bc60bb84b3e9dc834b5eea24522592a011d0526a
                                         <Button className="btn-dark mb-3">Join Room</Button>
                                     </Card.Text>
                                 </Card.Body>
