@@ -11,23 +11,23 @@ import UserService from '../services/user.service';
 
 
 const Homepage = () => {
-    // const [content, setContent] = useState("");
+    const [content, setContent] = useState("");
 
-    // useEffect(() => {
-    //     UserService.getPublicContent().then(
-    //         (response) => {
-    //             setContent(response.data);
-    //         },
-    //         (error) => {
-    //             const _content =
-    //                 (error.response && error.response.data) ||
-    //                 error.message ||
-    //                 error.toString();
+    useEffect(() => {
+        UserService.getPublicContent().then(
+            (response) => {
+                setContent(response.data);
+            },
+            (error) => {
+                const _content =
+                    (error.response && error.response.data) ||
+                    error.message ||
+                    error.toString();
 
-    //             setContent(_content);
-    //         }
-    //     );
-    // }, []);
+                setContent(_content);
+            }
+        );
+    }, []);
 
     return (
         <>
