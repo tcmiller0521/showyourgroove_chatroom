@@ -5,7 +5,7 @@ import './auth/login.css'
 import { Row, Col } from 'react-bootstrap'
 import { Image } from "react-bootstrap";
 import LoginWelcome from '../assets/images/login_welcome-02.png'
-import Login from '../components/auth/logincard'
+import Login from './auth/logincard'
 
 const LoginPage = () => {
     return (

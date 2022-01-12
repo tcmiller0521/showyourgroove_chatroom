@@ -5,8 +5,8 @@ import React from 'react'
 import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
-import LoginPage from './components/Login';
-import RegisterPage from './components/Register';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
 import Profile from './components/user/profile';
 import BoardUser from './components/user/BoardUser';
 import BoardAdmin from './components/user/BoardAdmin';
@@ -25,7 +25,9 @@ function App() {
     <>
       <Switch>
         <Route path="/" component={Homepage} />
-        <Route path="/aboutus" component={AboutUs} />
+        <Route path="/aboutus">
+          <AboutUs />
+          </Route>
         <Route path="/firstchatroom">
           <FirstChatroom />
         </ Route>

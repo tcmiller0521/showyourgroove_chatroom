@@ -10,7 +10,7 @@ import RegisterCard from "./auth/registerCard";
 const RegisterPage = () => {
     return (
         <>
-            <TopNav />
+            {/* <TopNav /> */}
             <Container fluid className="p-0 m-0 login-page">
                 <Row>
                     <Col lg={{span: 6, offset: 1}} className="mt-5 pt-5">
