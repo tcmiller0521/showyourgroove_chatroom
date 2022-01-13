@@ -1,7 +1,7 @@
 // import post model so that we can use mongoose methods
 // to retrieve, create, update, and delete post, rooms , friends etc... using controller files
 
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 import PostMessage from '../models/postMessage.js';
 
