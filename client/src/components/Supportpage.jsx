@@ -1,6 +1,6 @@
 import './supportPage/supportpage.css';
 import TopNav from './navigation/TopNav';
-import { Accordion, Container, Form, Button } from 'react-bootstrap';
+import { Accordion, Container, Form} from 'react-bootstrap';
 import Footer from './navigation/Footer';
 import MyVerticallyCenteredModal from './supportPage/supportModal';
 import { useState } from 'react';

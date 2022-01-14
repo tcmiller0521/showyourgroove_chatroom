@@ -1,12 +1,7 @@
-import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
-import db from '../models/index.js'
-
-const ROLES = db.ROLES;
-const User = db.user;
+import userModel from '../models/user.js';
 
 export const checkDuplicateEmail = (req, res, next) => {
-    User.findOne({
+    userModel.findOne({
         email: req.body.email
     }).exec((err, email) => {
         if (err){
@@ -24,7 +19,7 @@ export const checkDuplicateEmail = (req, res, next) => {
 };
 
 export const checkDuplicateUsername = (req, res, next) => {
-    User.findOne({
+    userModel.findOne({
         username: req.body.username
     }).exec((err, username) => {
         if (err){

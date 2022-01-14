@@ -5,42 +5,12 @@ import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 import { Link } from "react-router-dom";
 
-import React, { useState, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
-import EventBus from "../../common/EventBus";
-import { logout } from "../../state/authSlice";
 
 
 const TopNav = () => {
-    const [showModeratorBoard, setShowModeratorBoard] = useState(false);
-    const [showAdminBoard, setShowAdminBoard] = useState(false);
-
-    const { user: currentUser } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
-
-    const logOut = useCallback(() => {
-        dispatch(logout());
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (currentUser) {
-            setShowModeratorBoard(currentUser.roles.includes("ROLE_MODERATOR"));
-            setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
-        } else {
-            setShowModeratorBoard(false);
-            setShowAdminBoard(false);
-        }
-
-        EventBus.on("logout", () => {
-            logOut();
-        });
-
-        return () => {
-            EventBus.remove("logout");
-        };
-    }, [currentUser, logOut]);
-
+    
 
     return (
         <Navbar className="bg-secondary pb-1 ps-5" expand="lg" >

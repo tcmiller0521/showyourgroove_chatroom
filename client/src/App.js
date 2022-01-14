@@ -1,15 +1,12 @@
+import './App.css'
 import { Route, Switch } from 'react-router-dom'
+
 import Homepage from './components/Homepage';
 import FirstChatroom from './components/chatrooms/publicRooms/FirstChatroom';
 import AboutUs from './components/AboutUs';
-
 import LoginPage from './components/LoginPage';
 import Support from './components/Supportpage';
-
-
-import './App.css'
 import RegisterPage from './components/RegisterPage';
-import Footer from './components/navigation/Footer';
 
 function App() {
   return (

@@ -1,5 +1,4 @@
 import TopNav from "./navigation/TopNav";
-import Footer from "./navigation/Footer";
 import Container from 'react-bootstrap/Container'
 import './auth/login.css'
 import { Row, Col } from 'react-bootstrap'

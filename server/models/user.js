@@ -12,13 +12,7 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true,
-    },
-    // roles: [
-    //     {
-    //         type: mongoose.Schema.Types.ObjectId,
-    //         ref: "RoleModel"
-    //     }
-    // ]
+    }
 })
 
 export default mongoose.model("UserModel", userSchema);

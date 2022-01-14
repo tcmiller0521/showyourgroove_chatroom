@@ -1,17 +1,7 @@
-import React, { useState, useEffect  } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
-import { Formik, ErrorMessage } from "formik";
-import { Link } from "react-router-dom";
-import * as Yup from "yup";
+import React from "react";
 
-
-import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 
-import { loginUser } from "../../state/authSlice";
-import { clearMessage } from "../../state/messageSlice";
 import Auth from "../auth/auth";
 
 const Login = (props) => {
@@ -32,48 +22,6 @@ const Login = (props) => {
 };
 
 export default Login;
-
-
-//   const [loading, setLoading] = useState(false);
-
-//   const { isLoggedIn } = useSelector((state) => state.auth);
-//   const { message } = useSelector((state) => state.message);
-
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     dispatch(clearMessage());
-//   }, [dispatch]);
-
-//   const initialValues = {
-//     username: "",
-//     password: "",
-//   };
-
-//   const validationSchema = Yup.object().shape({
-//     username: Yup.string().required("This field is required!"),
-//     password: Yup.string().required("This field is required!"),
-//   });
-
-//   const handleLogin = (formValue) => {
-//     const { username, password } = formValue;
-//     setLoading(true);
-
-//     dispatch(loginUser({ username, password }))
-//       .unwrap()
-//       .then(() => {
-//         props.history.push("/profile");
-//         window.location.reload();
-//       })
-//       .catch(() => {
-//         setLoading(false);
-//       });
-//   };
-
-//   if (isLoggedIn) {
-//     return <Redirect to="/profile" />;
-//   }
-
 
 {/* <Formik
 initialValues={initialValues}

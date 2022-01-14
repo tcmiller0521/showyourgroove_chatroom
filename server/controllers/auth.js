@@ -1,12 +1,7 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import db from '../models/index.js'
-import user from '../models/user.js';
 
 import UserModel from '../models/user.js'
-
-// const Role = db.role;
-// const User = db.user;
 
 const secret = 'test';
 
@@ -51,45 +46,3 @@ export const signUp = async (req, res) => {
     }
 }
 
-// export const registerRole = async (req, res) => {
-//     if (req.body.roles) {
-//         Role.find(
-//             {
-//                 name: { $in: req.body.roles }
-//             },
-//             (err, roles) => {
-//                 if (err) {
-//                     res.status(500).send({ message: err });
-//                     return;
-//                 }
-
-//                 user.roles = roles.map(role => role._id);
-//                 user.save(err => {
-//                     if (err) {
-//                         res.status(500).send({ message: err });
-//                         return;
-//                     }
-
-//                     res.send({ message: "User was registered successfully!" });
-//                 });
-//             }
-//         );
-//     } else {
-//         Role.findOne({ name: "user" }, (err, role) => {
-//             if (err) {
-//                 res.status(500).send({ message: err });
-//                 return;
-//             }
-
-//             user.roles = [role._id];
-//             user.save(err => {
-//                 if (err) {
-//                     res.status(500).send({ message: err });
-//                     return;
-//                 }
-
-//                 res.send({ message: "User was registered successfully!" });
-//             });
-//         });
-//     }
-// };
