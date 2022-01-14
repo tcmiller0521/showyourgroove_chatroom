@@ -1,11 +1,12 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import user from '../models/user.js'
+import db from '../models/index.js'
 
-import UserModel from '../models/user.js'
+const ROLES = db.ROLES;
+const User = db.user;
 
 export const checkDuplicateEmail = (req, res, next) => {
-    UserModel.findOne({
+    User.findOne({
         email: req.body.email
     }).exec((err, email) => {
         if (err){
@@ -23,7 +24,7 @@ export const checkDuplicateEmail = (req, res, next) => {
 };
 
 export const checkDuplicateUsername = (req, res, next) => {
-    UserModel.findOne({
+    User.findOne({
         username: req.body.username
     }).exec((err, username) => {
         if (err){
@@ -40,4 +41,19 @@ export const checkDuplicateUsername = (req, res, next) => {
     })
 };
 
+
+export const checkRolesExist = ( req, res, next ) => {
+    if (req.body.roles) {
+        for (let i = 0; i < req.body.roles.length; i++) {
+            if (!ROLES.includes(req.body.roles[i])) {
+                res.status(400).send({
+                    message: `Role ${req.body.roles[i]} does not exist.`
+                });
+                return;
+            }
+        }
+    }
+
+    next();
+}
 

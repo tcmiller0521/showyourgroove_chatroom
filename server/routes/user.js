@@ -1,10 +1,12 @@
 import express from 'express'
-import { checkDuplicateEmail, checkDuplicateUsername } from '../middleware/verifySignUp.js';
+import { isAdmin, isModerator } from '../middleware/auth.js';
 const router = express.Router();
 
-import { signIn, signUp } from '../controllers/user.js';
+import { allAccess, userBoard, adminBoard, moderatorBoard } from '../controllers/user.js';
 
-router.post( "/signin", signIn);
-router.post("/signup", checkDuplicateEmail, checkDuplicateUsername, signUp);
+router.get('/test/all', allAccess);
+router.get('/test/user', userBoard);
+router.get('/test/mod', isModerator, moderatorBoard);
+router.get('/test/admin', isAdmin, adminBoard);
 
 export default router;
