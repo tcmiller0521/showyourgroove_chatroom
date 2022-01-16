@@ -9,17 +9,24 @@ const postListSlice = createSlice({
     reducers: {
         // getPosts
         getPosts: (state, action) => {
+            console.log(action.payload)
             state.postList = (action.payload);
         },
 
         // createPost
         createPost: (state, action) => {
-            state.postList.push(action.payload);
             console.log(action.payload)
+            state.postList.push(action.payload);
+        },
+
+        //updatePost 
+        updatePost: (state, action) => {
+            console.log(action.payload)
+            state.postList.map((postList) => (postList._id !== action.payload))
         },
     }
 })
 
-export const { createPost } = postListSlice.actions;
+export const { createPost, getPosts, updatePost } = postListSlice.actions;
 export const selectPostList = (state) => state.postList.postList;
-export default postListSlice.reducer
+export default postListSlice.reducer;

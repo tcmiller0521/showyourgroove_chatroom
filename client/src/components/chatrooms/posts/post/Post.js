@@ -2,7 +2,7 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     // const dispatch = useDispatch();
 
     return (
