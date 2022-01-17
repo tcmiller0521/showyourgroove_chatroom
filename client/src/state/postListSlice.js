@@ -22,11 +22,14 @@ const postListSlice = createSlice({
         //updatePost 
         updatePost: (state, action) => {
             console.log(action.payload)
-            state.postList.map((postList) => (postList._id !== action.payload))
+            state.postList.map((post) => (post._id === action.payload._id ? action.payload : post));
         },
+        deletePost: (state, action) => {
+            state.postList.filter((post) => post._id !== action.payload);
+        }
     }
 })
 
-export const { createPost, getPosts, updatePost } = postListSlice.actions;
+export const { createPost, getPosts, updatePost, deletePost } = postListSlice.actions;
 export const selectPostList = (state) => state.postList.postList;
 export default postListSlice.reducer;

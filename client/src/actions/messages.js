@@ -13,7 +13,7 @@ export const retrieveMessageList = () => async (dispatch) => {
 
 export const createPostList = (post) => async (dispatch) => {
     try {
-        const { data } = await api.sendMessage(post);
+        const { data } = await api.createMessage(post);
         dispatch(createPost(data))
     } catch (error) {
         console.log(error)

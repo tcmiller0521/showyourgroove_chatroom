@@ -13,8 +13,8 @@ API.interceptors.request.use((req) => {
 export const userLogin = (formData) => API.post('/auth/signin', formData)
 export const userRegister = (formData) => API.post('/auth/signup', formData)
 
-export const getMessages = () => API.get('/post');
-export const sendMessage = (post) => API.post('/post', post);
-export const editMessage = (id, messageEdit) => API.patch(`/post/${id}`, messageEdit)
+export const getMessages = () => API.get('/posts');
+export const createMessage = (newPost) => API.post('/posts', newPost);
+export const editMessage = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost)
 
   
