@@ -13,7 +13,7 @@ import Background from '../../../assets/images/Background2.jpg'
 
 
 // const FirstChatroom = () => {
-const FirstChatroom = () => {
+const FirstChatroom = ({ currentId, setCurrentId }) => {
 
     const [rooms, setRooms] = useState(true)
     const [priv, setPriv] = useState(true)
@@ -52,7 +52,7 @@ const FirstChatroom = () => {
                         </Col>
                         
                         <Col xs="5">
-                            <ChatRoom />
+                            <ChatRoom setCurrentId={setCurrentId} currentId={currentId} />
                         </Col>
                     </Container>
                 </Row>
