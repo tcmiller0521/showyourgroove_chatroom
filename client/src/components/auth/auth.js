@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { userSignIn, userSignUp } from '../../actions/auth';
 import Input from './input';
@@ -48,14 +48,18 @@ const Auth = () => {
                     <Input name="password" placeholder="Password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                     {isSignup && <Input name="confirmPassword" placeholder="Confirm Password" label="Repeat Password" handleChange={handleChange} type="password" />}
                 </div>
+                <Link to="/profile">
                 <button type="submit">
                     {isSignup ? 'Sign Up' : 'Sign In'}
                 </button>
+                </Link>
                 <div>
                     <div>
+    
                         <button onClick={switchMode}>
                             {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
                         </button>
+                       
                     </div>
                 </div>
             </form>

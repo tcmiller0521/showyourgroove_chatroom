@@ -1,26 +1,18 @@
+import { Row, Col, Container, Form, Button, Stack } from 'react-bootstrap'
+
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { selectPostList } from '../../../state/postListSlice';
-
-import { createPost } from '../../../state/postListSlice';
+import { createPostList, editPost } from '../../../actions/messages';
 
 import Posts from '../posts/Posts';
 
-import {
-    Row, 
-    Col, 
-    Container, 
-    Form,
-    Button,
-    Stack 
-} from 'react-bootstrap'
 
 // import Rooms from '../rooms/Rooms'
 
-function ChatRoom() {
+function ChatRoom({ currentId, setCurrentId }) {
+
     const dispatch = useDispatch();
-    const allPosts = useSelector(selectPostList);
 
     const postObj = {
         message: '',
@@ -28,7 +20,11 @@ function ChatRoom() {
 
     const [ postData, setPostData ] = useState(postObj);
 
+    const allPosts = useSelector(selectPostList);
+    const foundMessage = (currentId ? allPosts.find((post) => post._id === currentId) : null)
+
     const clear = () => {
+        setCurrentId(0);
         setPostData(postObj);
         console.log(postObj)
     };
@@ -36,9 +32,12 @@ function ChatRoom() {
     const submitHandler = (e) => {
         e.preventDefault();
         // console.log(e)
-        dispatch(createPost(postData));
-        
-
+        if (currentId === 0) {
+            dispatch(createPostList(postData))
+        }
+        else {
+            dispatch(editPost(currentId, postData))
+        }
         clear();
     };
 
@@ -48,6 +47,10 @@ function ChatRoom() {
             [ e.target.name ]: e.target.value,
         });
     };
+
+    useEffect(() => {
+        if (foundMessage) setPostData(foundMessage)
+    }, [foundMessage])
 
     return (
         <div>
@@ -64,7 +67,7 @@ function ChatRoom() {
                     {/* Chatroom Feed */}
 
                     <Col xs="9" className='chatFeed'>
-                        <Posts />
+                        <Posts setCurrentId={setCurrentId}/>
                     </Col> 
                     {/* Chatroom Population (current users populating room) */}
                     <Col xs="2"className='chatPop'></Col>
@@ -76,7 +79,7 @@ function ChatRoom() {
                             <Form autoComplete='off' onSubmit={submitHandler}>
                                 <Form.Control  className="me-auto" name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/>
                             
-                                <Button variant="secondary" type="submit">POST</Button>
+                                <Button variant="secondary" type="submit" onClick={submitHandler}>POST</Button>
                             </Form>
                         </Stack>
                         {/* <form autoComplete='off' onSubmit={submitHandler}>
