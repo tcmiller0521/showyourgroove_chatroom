@@ -1,7 +1,10 @@
 import { Container, Row, Col, Tab, Tabs } from "react-bootstrap"
 import './ProfilePage.css';
 import { useState } from "react";
-import UserChats from "./UserChats";
+import PublicUserChats from "./PublicUserChats";
+import PrivateUserChats from "./PrivateUserChat";
+import CustomChatrooms from "./CustomChatrooms";
+import UserSettings from "./userSettings";
 
 const ProfileRouter = () => {
 
@@ -14,15 +17,17 @@ const ProfileRouter = () => {
                     <Col lg={{span: 10,}}>
                         <Tabs
                             id="controlled-tab-example"
-                            defaultActiveKey="chats"
+                            defaultActiveKey="chatrooms"
                             onSelect={(k) => setKey(k)}
                             className="mb-3"
                         >
-                            <Tab eventKey="chats" title="Chats">
-                                <UserChats />
+                            <Tab eventKey="chatrooms" title="Chatrooms">
+                                <PublicUserChats />
+                                <PrivateUserChats />
+                                <CustomChatrooms />
                             </Tab>
                             <Tab eventKey="settings" title="Settings">
-                                <h2>page 2</h2>
+                                <UserSettings />
                             </Tab>
                         </Tabs>
                     </Col>

@@ -16,7 +16,7 @@
 
 .avatar-img {
     height: 55vh;
-    background-image: url("../../assets/images/user-avatar.png");
+    background-image: url("../../assets/images/Taylor_Avatar.png");
 }
 
 .scrollspy-example {
@@ -24,3 +24,9 @@
     height: 200px;
     overflow: auto;
   }
+
+.pubrooms-divider {
+    width: 40rem;
+    height: .1rem;
+    background-color:white;
+}

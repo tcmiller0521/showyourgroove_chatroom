@@ -5,6 +5,7 @@ import { Card, CardGroup } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import TopNav from './navigation/TopNav';
 import Footer from './navigation/Footer';
+import TaylorAvatar from '../assets/images/Taylor_Avatar.png';
 
 const AboutUs = () => {
     return (
@@ -63,7 +64,7 @@ const AboutUs = () => {
                             </Card.Body>
                         </Card>
                         <Card className='aboutCards'>
-                            <Card.Img variant="top" src={cardPlaceholder} />
+                            <Card.Img variant="top" src={TaylorAvatar} />
                             <Card.Body className='TaylorCard'>
                                 <Card.Title className='TaylorOutline aboutcenternames'><h1>TAYLOR MILLER</h1></Card.Title>
                                 <Card.Text className='TaylorOutline'>
