@@ -10,6 +10,7 @@ import RegisterPage from './components/RegisterPage';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { retrieveMessageList } from './actions/messages';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   const [ currentId, setCurrentId ] = useState(0)
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path="/register">
           <RegisterPage />
+        </Route>
+        <Route path ="/profile">
+          <ProfilePage />
         </Route>
       </Switch>
     </>
