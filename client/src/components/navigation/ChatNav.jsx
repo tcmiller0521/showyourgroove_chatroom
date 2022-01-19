@@ -1,13 +1,19 @@
 import React from 'react'
 
+import { Navbar } from "react-bootstrap";
+
 import Pubchat from '../../assets/images/opinions.png'
 import Pchat from '../../assets/images/private-chat.png'
 import Friends from '../../assets/images/friends.png'
 import Online  from '../../assets/images/online.png'
 
+
+import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
+
 function ChatNav({setRooms, setPriv, setOnline, setSocial}) {
     return (
-        <div>
+        <div className="chatNav">
+            <Navbar.Brand href="/"><img src={HalfLogo} /></Navbar.Brand>
             <button className="navBtn"
                 onClick= {() => {
                     

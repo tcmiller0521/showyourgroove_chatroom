@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 
 import { selectPostList } from '../../../state/postListSlice';
 
@@ -16,16 +18,20 @@ import {
     Stack 
 } from 'react-bootstrap'
 
-// import Rooms from '../rooms/Rooms'
+import RoomsInfo from '../../../assets/contentFiles/Rooms'
 
 function ChatRoom() {
     const dispatch = useDispatch();
     const allPosts = useSelector(selectPostList);
+    const {index} = useParams();
+    console.log(index);
+    
 
     const postObj = {
         message: '',
     };
 
+    // const [ style, setStyle ] = useState(Rooms[index].link)
     const [ postData, setPostData ] = useState(postObj);
 
     const clear = () => {
@@ -52,22 +58,23 @@ function ChatRoom() {
     return (
         <div>
             {/* <Rooms /> */}
-            <Container className="mainChat">
+            {/* className=`${theme}`} */}
+            <Container className="mainChat"> 
                 {/* Chatroom Header */}
-                <Row className='chatHead'>
+                <Row className={`${RoomsInfo[index].link}chatHead`}>
                     <Col>
                         {/* Chatroom title */}
-                        <h1>This is the chatroom</h1> 
+                        <h1>{RoomsInfo[index].title}</h1> 
                     </Col>
                 </Row>
                 <Row className='chatBody'>
                     {/* Chatroom Feed */}
 
-                    <Col xs="9" className='chatFeed'>
+                    <Col xs="9" className={`${RoomsInfo[index].link}chatFeed`}>
                         <Posts />
                     </Col> 
                     {/* Chatroom Population (current users populating room) */}
-                    <Col xs="2"className='chatPop'></Col>
+                    <Col xs="2"className={`${RoomsInfo[index].link}chatPop`}></Col>
                 </Row>
                 <Row>
                     {/* Chatroom Input */}

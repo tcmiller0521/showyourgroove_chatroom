@@ -5,6 +5,8 @@ import { Row, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { selectContent } from '../../state/contentSlice'
 
+import { Link } from 'react-router-dom'
+
 
 const BrowseChatRooms = () => {
 
@@ -30,7 +32,7 @@ const BrowseChatRooms = () => {
                                     <Card.Title className="pt-2 card-border"><h3>{RoomInfo.title}</h3></Card.Title>
                                     <Card.Text className="card-border pt-3 text-dark">
                                             {RoomInfo.description}
-                                        <Button className="btn-dark mb-3">Join Room</Button>
+                                        <Button className="btn-dark mb-3"><Link to={`/firstchatroom/${i}`}>Join Room</Link></Button>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

@@ -29,7 +29,7 @@ const TopNav = () => {
                 <Navbar.Brand href="#home"><img src={HalfLogo} /></Navbar.Brand>
                 <div>
                     <Navbar.Collapse>
-                        <Nav.Link href="/firstchatroom">
+                        <Nav.Link href="/firstchatroom/0">
                             <h2 className="text-dark">Chat</h2>
                         </Nav.Link>
                         <Nav.Link href="/support">

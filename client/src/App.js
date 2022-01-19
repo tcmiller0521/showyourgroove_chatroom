@@ -18,7 +18,7 @@ function App() {
         <Route path="/aboutus">
           <AboutUs />
         </Route>
-        <Route path="/firstchatroom">
+        <Route path="/FirstChatroom/:index" exact>
           <FirstChatroom />
         </Route>
         <Route path="/Support">
