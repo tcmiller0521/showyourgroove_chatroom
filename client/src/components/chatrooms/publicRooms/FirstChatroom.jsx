@@ -3,7 +3,7 @@ import { Row, Col, Container, Image } from 'react-bootstrap'
 import { Switch, Route } from 'react-router-dom'
 
 import { useParams } from 'react-router'
-import RoomInfo from '../../../assets/contentFiles/Rooms'
+import RoomsInfo from '../../../assets/contentFiles/Rooms'
 
 import ChatNav from '../../navigation/ChatNav'
 import ChatRoom from './ChatRoom'
@@ -35,7 +35,7 @@ const FirstChatroom = ({ currentId, setCurrentId }) => {
         return (
             <>
             {/* {`${RoomsInfo[index].link}bg-image`} dont need wrapper {{define RoomsInfo}}*/}
-            <Container className="wrapper generalbg-image"  fluid>
+            <Container className={`${RoomsInfo[index].link}bg-image`}  fluid>
                 {/* <Image fluid src={Background}></Image> */}
                 <Row className="test">
                     
