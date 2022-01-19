@@ -7,8 +7,18 @@ import AboutUs from './components/AboutUs';
 import LoginPage from './components/LoginPage';
 import Support from './components/Supportpage';
 import RegisterPage from './components/RegisterPage';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { retrieveMessageList } from './actions/messages';
 
 function App() {
+  const [ currentId, setCurrentId ] = useState(0)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(retrieveMessageList())
+  }, [currentId, dispatch])
+
   return (
     <>
       <Switch>
@@ -19,7 +29,7 @@ function App() {
           <AboutUs />
         </Route>
         <Route path="/FirstChatroom/:index" exact>
-          <FirstChatroom />
+          <FirstChatroom setCurrentId={setCurrentId} currentId={currentId} />
         </Route>
         <Route path="/Support">
           <Support />

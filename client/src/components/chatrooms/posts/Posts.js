@@ -4,15 +4,15 @@ import { selectPostList } from '../../../state/postListSlice';
 
 import Post from './post/Post';
 
-const Posts = () => {
+const Posts = ({ setCurrentId }) => {
     const allPosts = useSelector(selectPostList);
 
     return (
         !allPosts.length ? <h1>Start Your Groove</h1> : (
             <div className="post">
-                {allPosts.map((post, index) => (
-                    <div key= {index}>
-                        <Post post={post} index={index} />
+                {allPosts.map((post) => (
+                    <div key= {post._id}>
+                        <Post post={post} setCurrentId={setCurrentId} />
                     </div>
                 ))}
             </div>
