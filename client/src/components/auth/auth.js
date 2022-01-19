@@ -26,9 +26,9 @@ const Auth = () => {
         e.preventDefault();
 
         if (isSignup) {
-            dispatch(userSignUp(formData, history));
+            dispatch(userSignUp(formData, history.push('/profile')));
         } else {
-            dispatch(userSignIn(formData, history));
+            dispatch(userSignIn(formData, history.push('/profile')));
         }
     };
 
@@ -48,11 +48,11 @@ const Auth = () => {
                     <Input name="password" placeholder="Password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                     {isSignup && <Input name="confirmPassword" placeholder="Confirm Password" label="Repeat Password" handleChange={handleChange} type="password" />}
                 </div>
-                <Link to="/profile">
+
                 <button type="submit">
-                    {isSignup ? 'Sign Up' : 'Sign In'}
+                        {isSignup ? 'Sign Up' : 'Sign In'}
                 </button>
-                </Link>
+
                 <div>
                     <div>
                         <button onClick={switchMode}>

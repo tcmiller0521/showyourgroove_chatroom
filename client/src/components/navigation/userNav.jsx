@@ -3,17 +3,26 @@ import { Navbar } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
-import { Link } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
+import { logout } from '../../state/authSlice';
+import { useDispatch } from "react-redux";
 import React from "react";
 
 
 
 const UserNav = () => {
-    
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const logoutUser = () => {
+        dispatch(logout());
+
+        history.push('/')
+    }
+
+    const userData = JSON.parse( localStorage.getItem('profile') );
 
     return (
-        <Navbar className="bg-primary pb-1 ps-5" expand="lg" >
+        <Navbar className="pb-1 ps-5" style={{backgroundColor: `${userData.result.color}` }} expand="lg" >
             <Container fluid className="d-flex justify-content-center ms-5 ps-5">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div>
@@ -38,7 +47,7 @@ const UserNav = () => {
                     </Navbar.Collapse>
                 </div>
                 <Button href="/profile" className="btn-dark me-3">Profile</Button>
-                <Button href="/register" className="btn-dark">Logout</Button>
+                <Button onClick={logoutUser} className="btn-dark">Logout</Button>
             </Container>
         </Navbar>
     )

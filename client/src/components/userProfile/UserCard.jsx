@@ -1,22 +1,29 @@
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
 import userAvatar from '../../assets/images/user-avatar.png'
 
 const UserCard = () => {
+
+    const userData = JSON.parse( localStorage.getItem('profile') );
+
     return (
         <>
             <Row>
-                <Col lg={{span: 10, offset: 2}} className="mt-5 pt-5">
-                    <Card className="bg-primary">
+                <Col lg={{ span: 10, offset: 2 }} className="mt-5 pt-5">
+                    <Card style={{backgroundColor: `${userData.result.color}` }}>
                         <Card.Img variant="top" className="avatar-img" />
                         <Card.Body>
                             <Card.Title>
-                                <h2>Username1234</h2>
+                                <h2>{userData.result.username}</h2>
                             </Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere </Button>
+                        
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                    <Form.Label>About me</Form.Label>
+                                    <Form.Control as="textarea" rows={3} />
+                                </Form.Group>
+            
+                            <Button className="btn-secondary mt-2 px-5 py-2" type="submit">
+                                Save Changes
+                            </Button>
                         </Card.Body>
                     </Card>
                 </Col>

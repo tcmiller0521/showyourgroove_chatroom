@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs'
+import mongoose from 'mongoose'
 import jwt from 'jsonwebtoken'
 
 import UserModel from '../models/user.js'
@@ -15,7 +16,6 @@ export const signIn = async (req, res) => {
 
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
 
-
         if (!isPasswordCorrect) return res.status(400).json({ message: "Password incorrect." });
 
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, secret, { expiresIn: "5h" });
@@ -29,12 +29,12 @@ export const signIn = async (req, res) => {
 }
 
 export const signUp = async (req, res) => {
-    const { email, password, username } = req.body;
+    const { email, password, username, color, avatar, banner } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const result = await UserModel.create({ email, password: hashedPassword, username });
+        const result = await UserModel.create({ email, password: hashedPassword, username, color, avatar, banner });
 
         const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "5h" });
 
@@ -44,5 +44,18 @@ export const signUp = async (req, res) => {
 
         console.log(error)
     }
+}
+
+export const updateUser = async (req, res) => {
+    const { id } = req.params;
+    const { email, password, username, color, avatar, banner } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("User not found");
+
+    const updatedUser = { email, password, username, color, avatar, banner, _id: id };
+
+    await UserModel.findByIdAndUpdate(id, updatedUser, { new: true });
+
+    res.json(updateUser);
 }
 

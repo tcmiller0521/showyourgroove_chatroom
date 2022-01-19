@@ -12,7 +12,17 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    color: {
+        type: String,
+    },
+    avatar: {
+        type: String,
+    },
+    banner: {
+        type: String,
     }
 })
 
-export default mongoose.model("UserModel", userSchema);
+const UserModel = mongoose.model('UserModel', userSchema);
+export default UserModel;

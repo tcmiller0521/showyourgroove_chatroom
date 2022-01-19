@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const API = axios.create({ baseURL: "http://localhost:5000"})
 
 API.interceptors.request.use((req) => {
@@ -12,6 +11,7 @@ API.interceptors.request.use((req) => {
 
 export const userLogin = (formData) => API.post('/auth/signin', formData)
 export const userRegister = (formData) => API.post('/auth/signup', formData)
+export const updateUserInfo = (id, updatedUser) => API.patch(`/auth/update/${id}`, updatedUser);
 
 export const getMessages = () => API.get('/posts');
 export const createMessage = (newPost) => API.post('/posts', newPost);

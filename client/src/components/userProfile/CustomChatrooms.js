@@ -9,12 +9,12 @@ const CustomChatrooms = () => {
 
     return (
         <>
-            <div class="row">
+            <div className="row">
                 <div className="d-flex flex-column align-items-center">
                     <h1>Custom Chatrooms</h1>
                     <div className="pubrooms-divider mb-4" />
                 </div>
-                <div class="col-md-12">
+                <div className="col-md-12">
                     <div
                         data-mdb-spy="scroll"
                         data-mdb-target="#scrollspy1"
@@ -22,17 +22,20 @@ const CustomChatrooms = () => {
                         className="scrollspy-example"
                     >
                         {ChatInfo.map((userChatRooms, i) => (
-                            <section id="example-1">
+                            <section key={i} id="example-1">
                                 <Row>
-                                    <Col>
+                                    <Col lg={6}>
                                         <h2>{userChatRooms.chatroom}</h2>
                                     </Col>
-                                    <Col>
+                                    <Col lg={2}>
                                         <Link to={userChatRooms.link}>
                                             <Button className="btn-secondary mb-3">
                                                 Join Room
                                             </Button>
                                         </Link>
+                                    </Col>
+                                    <Col lg={2}>
+                                        <Button className="btn-secondary">Delete</Button>
                                     </Col>
                                 </Row>
                             </section>

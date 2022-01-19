@@ -1,5 +1,5 @@
 import * as api from '../api/index.js';
-import { loginUser } from '../state/authSlice';
+import { loginUser, updateUser } from '../state/authSlice';
 
 export const userSignIn = (formData, router) => async (dispatch) => {
   try {
@@ -24,3 +24,13 @@ export const userSignUp = (formData, router) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const editUser = (id, formData) => async (dispatch) => {
+  try {
+    const { data } = await api.updateUserInfo(id, formData);
+
+    dispatch(updateUser(data));
+  } catch (error) {
+  console.log(error)
+  }
+}
