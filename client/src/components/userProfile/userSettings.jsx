@@ -12,10 +12,10 @@ const initialState = { username: '', password: '', confirmPassword: '', color: '
 const UserSettings = () => {
     const dispatch = useDispatch();
 
-    const foundUser = JSON.parse( localStorage.getItem('profile') );
-    console.log(foundUser.result._id)
-    
     const [currentId, setCurrentId] = useState();
+
+    const foundUser = JSON.parse( localStorage.getItem('profile') );
+    setCurrentId(foundUser.result._id)
 
     const [formData, setFormData] = useState(initialState);
 
@@ -82,7 +82,7 @@ const UserSettings = () => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                defaultValue={currentId ? `${foundUser.results.color}` : "black"}
+                                                // defaultValue={currentId ? `${foundUser.results.color}` : "black"}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}
@@ -106,7 +106,6 @@ const UserSettings = () => {
                                         </Form.Group>
                                     </Col>
                                 </Row>
-                                <Button className="btn-secondary" onClick={() => {setCurrentId(formData._id)}}> Edit </Button>
                                 <Button className="btn-secondary mt-4 px-5 py-2" type="submit" onClick={handleSubmit}>
                                     Save Changes
                                 </Button>

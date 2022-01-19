@@ -65,9 +65,9 @@ export const updateUser = async (req, res) => {
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("User not found");
 
-    const updatedUser = { email, password, username, color, avatar, banner, _id: id };
+    const updatedFormData = { email, password, username, color, avatar, banner, _id: id };
 
-    await UserModel.findByIdAndUpdate(id, updatedUser, { new: true });
+    await UserModel.findByIdAndUpdate(id, updatedFormData, { new: true });
 
     res.json(updateUser);
 }
