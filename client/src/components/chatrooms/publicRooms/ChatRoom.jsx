@@ -28,7 +28,6 @@ function ChatRoom({ currentId, setCurrentId }) {
     // const [ style, setStyle ] = useState(Rooms[index].link)
     const [ postData, setPostData ] = useState(postObj);
 
-    const allPosts = useSelector(selectPostList);
     const foundMessage = (currentId ? allPosts.find((post) => post._id === currentId) : null)
 
     const clear = () => {
