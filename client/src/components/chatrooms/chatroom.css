@@ -93,6 +93,7 @@
 /* // generalChat style #default */
 .generalbg-image {
   background-image: url('../../assets/images/Background2.jpg');
+  background-size: cover;
   height: 100vh;
 }
 .generalchatHead {
@@ -134,7 +135,8 @@
 
 
 .rockbg-image {
-  background-image: url('../../assets/images/Background2.jpg');
+  background-image: url('../../assets/images/bg-RockChat.jpeg');
+  background-size: cover;
   height: 100vh;
 }
 .rockchatHead {
@@ -173,7 +175,8 @@
 /* // Classical Theme */
 
 .classicalbg-image {
-  background-image: url('../../assets/images/Background2.jpg');
+  background-image: url('../../assets/images/bg-ClassicalChat.jpeg');
+  background-size: cover;
   height: 100vh;
 }
 .classicalchatHead {
@@ -211,7 +214,8 @@
 /* // HipHop Theme */
 
 .hipHopbg-image {
-  background-image: url('../../assets/images/Background2.jpg');
+  background-image: url('../../assets/images/bg-HipHopChat.jpeg');
+  background-size: cover;
   height: 100vh;
 }
 .hipHopchatHead {
@@ -249,7 +253,8 @@
 /* //  POP Theme */
 
 .popbg-image {
-  background-image: url('../../assets/images/Background2.jpg');
+  background-image: url('../../assets/images/bg-PopChat.jpeg');
+  background-size: cover;
   height: 100vh;
 }
 .popchatHead {
@@ -288,7 +293,8 @@
 /* // Indie Theme */
 
 .indiebg-image {
-  background-image: url('../../assets/images/Background2.jpg');
+  background-image: url('../../assets/images/bg-IndieChat.jpeg');
+  background-size: cover;
   height: 100vh;
 }
 .indiechatHead {

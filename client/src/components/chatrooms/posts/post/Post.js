@@ -4,10 +4,15 @@ import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 
+// import useParams
+
+
+
 const Post = ({ post, setCurrentId }) => {
     const dispatch = useDispatch();
 
     return (
+        // useParams to get themes to style post bubble
         <div className="post">
             <div>
                 {/* <Button onClick={() => setCurrentId(post._id)}>
