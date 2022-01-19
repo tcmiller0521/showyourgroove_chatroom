@@ -21,6 +21,9 @@ const userSchema = mongoose.Schema({
     },
     banner: {
         type: String,
+    },
+    id: {
+        type: String,
     }
 })
 

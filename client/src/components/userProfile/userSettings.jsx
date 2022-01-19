@@ -3,36 +3,45 @@ import { useState, useEffect } from "react";
 import { Card, Button, Form, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { editUser } from "../../actions/auth";
+import { selectAuth } from "../../state/authSlice";
+import FileBase from 'react-file-base64';
 
-const UserSettings = (currentId, setCurrentId) => {
+
+const initialState = { username: '', password: '', confirmPassword: '', color: '', avatar: '', banner: '', };
+
+const UserSettings = () => {
     const dispatch = useDispatch();
 
-    const userObj = {
-        color: '', username: '', banner: '',
-    }
+    const foundUser = JSON.parse( localStorage.getItem('profile') );
+    console.log(foundUser.result._id)
+    
+    const [currentId, setCurrentId] = useState();
 
-    const [userData, setUserData] = useState(userObj);
+    const [formData, setFormData] = useState(initialState);
+
 
     const clear = () => {
-        setCurrentId(0);
-        setUserData(userObj);
+        setCurrentId();
+        setFormData(initialState);
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        dispatch(editUser(currentId, userData));
-        console.log(userData);
+        dispatch(editUser(currentId, formData));
+        console.log(formData);
 
         clear();
     }
 
     const handleChange = (e) => {
-        setUserData({
-            ...userData,
+        setFormData({
+            ...formData,
             [e.target.name]: e.target.value,
         })
     }
+
+
 
     return (
         <>
@@ -55,6 +64,10 @@ const UserSettings = (currentId, setCurrentId) => {
                                     <Form.Control name="password" type="updatePassword" placeholder="Change Password" onChange={handleChange}/>
                                 </Form.Group>
 
+                                <Form.Group className="mb-4 mx-5" controlId="formBasicPassword">
+                                    <Form.Control name="confirmPassword" type="updatePassword" placeholder="Confirm Password" onChange={handleChange}/>
+                                </Form.Group>
+
                             
                             <Container className="mt-5">
                                 <div className="d-flex flex-column align-items-center">
@@ -69,7 +82,7 @@ const UserSettings = (currentId, setCurrentId) => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                defaultValue="#563d7c"
+                                                defaultValue={currentId ? `${foundUser.results.color}` : "black"}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}
@@ -80,7 +93,8 @@ const UserSettings = (currentId, setCurrentId) => {
                                         <h3 className="text-light">Avatar Settings</h3>
                                         <p>Upload your own picture or customize an avatar!</p>
                                         <Form.Group controlId="formFile" className="mb-3">
-                                            <Form.Control type="file" name="avatar" onChange={handleChange}/>
+                                            <FileBase type="file" multiple={false} onDone={({ base64 }) => setFormData({...formData, avatar: base64})} />
+                                         
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -92,6 +106,7 @@ const UserSettings = (currentId, setCurrentId) => {
                                         </Form.Group>
                                     </Col>
                                 </Row>
+                                <Button className="btn-secondary" onClick={() => {setCurrentId(formData._id)}}> Edit </Button>
                                 <Button className="btn-secondary mt-4 px-5 py-2" type="submit" onClick={handleSubmit}>
                                     Save Changes
                                 </Button>

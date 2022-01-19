@@ -9,9 +9,10 @@ API.interceptors.request.use((req) => {
     return req;
 })
 
+export const getUsers = () => API.get('/auth/get')
 export const userLogin = (formData) => API.post('/auth/signin', formData)
 export const userRegister = (formData) => API.post('/auth/signup', formData)
-export const updateUserInfo = (id, updatedUser) => API.patch(`/auth/update/${id}`, updatedUser);
+export const updateUserInfo = (id, updatedFormData) => API.patch(`/auth/update/${id}`, updatedFormData);
 
 export const getMessages = () => API.get('/posts');
 export const createMessage = (newPost) => API.post('/posts', newPost);

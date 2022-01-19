@@ -46,6 +46,19 @@ export const signUp = async (req, res) => {
     }
 }
 
+export const getUser = async(req, res) => {
+    const { id } = req.params
+
+    try {
+    console.log("User Gotten")
+    const userList = await UserModel.findById({ _id: id });
+
+    res.status(200).json( userList )
+    } catch (e) {
+        res.status(400).json({ message: e })
+    }
+}
+
 export const updateUser = async (req, res) => {
     const { id } = req.params;
     const { email, password, username, color, avatar, banner } = req.body;

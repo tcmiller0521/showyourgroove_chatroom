@@ -4,7 +4,7 @@ import UserCard from "./UserCard";
 import { useState } from "react";
 import ProfileRouter from "./ProfileRouter";
 
-const ProfileBanner = (currentId, setCurrentId) => {
+const ProfileBanner = () => {
 
     const userData = JSON.parse( localStorage.getItem('profile') );
 
@@ -23,7 +23,7 @@ const ProfileBanner = (currentId, setCurrentId) => {
                             </div>
                         </Container>
                         <Container className="pt-5">
-                            <ProfileRouter currentId={currentId} setCurrentId={setCurrentId} />
+                            <ProfileRouter />
                         </Container>
                     </Col>
                 </Row>
