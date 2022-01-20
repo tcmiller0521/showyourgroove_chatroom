@@ -3,21 +3,22 @@ import { createSlice } from '@reduxjs/toolkit'
 const authSlice = createSlice({
   name: 'authSlice',
   initialState: {
-    auth: { authData: null }
+    auth: []
   },
   reducers: {
     getUser: (state, action) => {
       state.auth = action.payload
     },
     loginUser(state, action) {
-      localStorage.setItem('profile', JSON.stringify({ ...action.payload }));
+      localStorage.setItem('profile', JSON.stringify(action.payload ));
     },
     logout() {
       localStorage.clear();
     },
     updateUser: (state, action) => {
-      state.auth.map((formData) => (formData._id === action.payload._id ? action.payload : formData));
-      localStorage.setItem('profile', JSON.stringify({...action.payload}));
+      state.auth.map((userInfo) => (userInfo._id === action.payload._id ? action.payload : userInfo));
+      console.log(state.auth.map)
+      localStorage.setItem('profile', JSON.stringify(action.payload));
     }
   }
 });

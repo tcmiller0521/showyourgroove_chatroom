@@ -11,9 +11,9 @@ export const retrieveUser = () => async (dispatch) => {
   }
 }
 
-export const userSignIn = (formData, router) => async (dispatch) => {
+export const userSignIn = (userInfo, router) => async (dispatch) => {
   try {
-    const { data } = await api.userLogin(formData);
+    const { data } = await api.userLogin(userInfo);
 
     dispatch(loginUser(data));
 
@@ -23,9 +23,9 @@ export const userSignIn = (formData, router) => async (dispatch) => {
   }
 };
 
-export const userSignUp = (formData, router) => async (dispatch) => {
+export const userSignUp = (userInfo, router) => async (dispatch) => {
   try {
-    const { data } = await api.userRegister(formData);
+    const { data } = await api.userRegister(userInfo);
 
     dispatch(loginUser(data));
 
@@ -35,10 +35,10 @@ export const userSignUp = (formData, router) => async (dispatch) => {
   }
 };
 
-export const editUser = (id, formData) => async (dispatch) => {
+export const editUser = (id, userInfo) => async (dispatch) => {
   console.log(id)
   try {
-    const { data } = await api.updateUserInfo(id, formData);
+    const { data } = await api.updateUserInfo(id, userInfo);
 
     dispatch(updateUser(data));
   } catch (error) {

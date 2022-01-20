@@ -6,38 +6,42 @@ import { editUser } from "../../actions/auth";
 import { selectAuth } from "../../state/authSlice";
 import FileBase from 'react-file-base64';
 
-
-const initialState = { username: '', password: '', confirmPassword: '', color: '', avatar: '', banner: '', };
-const foundUser = JSON.parse(localStorage.getItem('profile'));
+    const profileInfo = JSON.parse(localStorage.getItem('profile'))
 
 const UserSettings = () => {
     const dispatch = useDispatch();
+    const usersInfo = useSelector(selectAuth)
+    const [currentId, setCurrentId] = useState(profileInfo.result._id);
+    const foundUser = (currentId ? usersInfo.find((userInfo) => userInfo._id === currentId) : null )
 
-    const [currentId, setCurrentId] = useState(foundUser.result._id);
+
     
-    const [formData, setFormData] = useState(initialState);
+    const initialState = { username: '', password: '', avatar: '', banner: '', color: '' };
 
+    const [userData, setUserData] = useState();
 
     const clear = () => {
         setCurrentId();
-        setFormData(initialState);
+        setUserData(initialState);
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        dispatch(editUser(currentId, formData));
-        console.log(formData);
-
-        clear();
+        dispatch(editUser(currentId, userData));
+        console.log(userData);
     }
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
+        setUserData({
+            ...userData,
             [e.target.name]: e.target.value,
         })
     }
+
+    useEffect(() => {
+        if (foundUser) setUserData(foundUser);
+      }, [foundUser]);
 
 
 
@@ -55,14 +59,14 @@ const UserSettings = () => {
                       
                             <Form>
                                 <Form.Group className="mb-4 mx-5" controlId="formBasicUser">
-                                    <Form.Control name="username" type="updateUsername" placeholder="Change Username" onChange={handleChange}/>
+                                    <Form.Control name="username" type="username" placeholder="Change Username" onChange={handleChange}/>
                                 </Form.Group>
 
                                 <Form.Group className="mb-4 mx-5" controlId="formBasicPassword">
-                                    <Form.Control name="password" type="updatePassword" placeholder="Change Password" onChange={handleChange}/>
+                                    <Form.Control name="password" type="password" placeholder="Change Password" onChange={handleChange}/>
                                 </Form.Group>
 
-                                <Form.Group className="mb-4 mx-5" controlId="formBasicPassword">
+                                <Form.Group className="mb-4 mx-5" controlId="formConfirmPassword">
                                     <Form.Control name="confirmPassword" type="updatePassword" placeholder="Confirm Password" onChange={handleChange}/>
                                 </Form.Group>
 
@@ -80,7 +84,7 @@ const UserSettings = () => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                // defaultValue={currentId ? `${foundUser.results.color}` : "black"}
+                                                // defaultValue={foundUser.color}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}
@@ -91,7 +95,7 @@ const UserSettings = () => {
                                         <h3 className="text-light">Avatar Settings</h3>
                                         <p>Upload your own picture or customize an avatar!</p>
                                         <Form.Group controlId="formFile" className="mb-3">
-                                            <FileBase type="file" multiple={false} onDone={({ base64 }) => setFormData({...formData, avatar: base64})} />
+                                            <FileBase name="avatar" type="file" multiple={false} onDone={({ base64 }) => setUserData({userData, avatar: base64})} />
                                          
                                         </Form.Group>
                                     </Col>
@@ -100,7 +104,7 @@ const UserSettings = () => {
                                     <Col>
                                         <h3 className="text-light">Profile Banner</h3>
                                         <Form.Group controlId="formFile" className="mb-3">
-                                            <Form.Control type="file" name="avatar" onChange={handleChange}/>
+                                            <Form.Control type="file" name="banner" onChange={handleChange}/>
                                         </Form.Group>
                                     </Col>
                                 </Row>

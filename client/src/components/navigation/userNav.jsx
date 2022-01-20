@@ -4,8 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 import { Link, useHistory } from "react-router-dom";
-import { logout } from '../../state/authSlice';
-import { useDispatch } from "react-redux";
+import { logout, selectAuth } from '../../state/authSlice';
+import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 
 
@@ -19,10 +19,11 @@ const UserNav = () => {
         history.push('/')
     }
 
-    const userData = JSON.parse( localStorage.getItem('profile') );
+    const userInfo = useSelector(selectAuth)
+    
 
     return (
-        <Navbar className="pb-1 ps-5" style={{backgroundColor: `${userData.result.color}` }} expand="lg" >
+        <Navbar className="pb-1 ps-5" style={{backgroundColor: `${userInfo.color}` }} expand="lg" >
             <Container fluid className="d-flex justify-content-center ms-5 ps-5">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div>

@@ -6,7 +6,7 @@ import { getUser, signIn, signUp, updateUser } from '../controllers/auth.js';
 
 router.post( "/signin", signIn);
 router.post("/signup", checkDuplicateEmail, checkDuplicateUsername, signUp);
-router.patch("/update/:id", updateUser);
+router.patch("/update/:id", updateUser, checkDuplicateUsername);
 router.get("/get/:id", getUser);
 
 export default router;

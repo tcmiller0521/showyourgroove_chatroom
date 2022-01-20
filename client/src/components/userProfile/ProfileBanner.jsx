@@ -3,11 +3,11 @@ import './ProfilePage.css';
 import UserCard from "./UserCard";
 import { useState } from "react";
 import ProfileRouter from "./ProfileRouter";
+import { useSelector } from "react-redux";
+import { selectAuth } from "../../state/authSlice";
 
-const ProfileBanner = () => {
-
-    const userData = JSON.parse( localStorage.getItem('profile') );
-
+const ProfileBanner = (userInfo) => {
+    console.log(userInfo)
 
     return (
         <>
@@ -19,7 +19,7 @@ const ProfileBanner = () => {
                     <Col lg={{ span: 8 }}>
                         <Container className="d-flex justify-content-start align-items-end user-welcome mb-5">
                             <div className="welcome-text bg-dark d-flex justify-content-center align-items-center px-5">
-                                <h1 className="px-4">Welcome Back, {userData.result.username} </h1>
+                                <h1 className="px-4">Welcome Back, {userInfo.username} </h1>
                             </div>
                         </Container>
                         <Container className="pt-5">

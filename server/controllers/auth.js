@@ -63,12 +63,12 @@ export const updateUser = async (req, res) => {
     const { id } = req.params;
     const { email, password, username, color, avatar, banner } = req.body;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("User not found");
+    const hashedPassword = await bcrypt.hash(password, 12);
 
-    const updatedFormData = { email, password, username, color, avatar, banner, _id: id };
+    const updatedUserInfo = { email, password: hashedPassword, username, color, avatar, banner, _id: id };
 
-    await UserModel.findByIdAndUpdate(id, updatedFormData, { new: true });
+    await UserModel.findByIdAndUpdate(id, updatedUserInfo, { new: true });
 
-    res.json(updateUser);
+    res.json(updatedUserInfo);
 }
 
