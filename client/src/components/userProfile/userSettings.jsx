@@ -4,25 +4,26 @@ import { Card, Button, Form, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { editUser } from "../../actions/auth";
 import { selectAuth } from "../../state/authSlice";
+import { selectUser } from "../../state/userSlice";
 import FileBase from 'react-file-base64';
 
-    const profileInfo = JSON.parse(localStorage.getItem('profile'))
+    
 
 const UserSettings = () => {
+    const profileInfo = useSelector(selectUser)
+    console.log(profileInfo.result)
     const dispatch = useDispatch();
     const usersInfo = useSelector(selectAuth)
+    const [userData, setUserData] = useState(profileInfo.result);
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
     const foundUser = (currentId ? usersInfo.find((userInfo) => userInfo._id === currentId) : null )
-
-
     
-    const initialState = { username: '', password: '', avatar: '', banner: '', color: '' };
+    const emptyState = { username: '', password: '', avatar: '', banner: '', color: '' };
 
-    const [userData, setUserData] = useState();
 
     const clear = () => {
         setCurrentId();
-        setUserData(initialState);
+        setUserData(emptyState);
     }
 
     const handleSubmit = async (e) => {

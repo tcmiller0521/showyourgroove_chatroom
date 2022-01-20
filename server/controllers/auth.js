@@ -38,7 +38,7 @@ export const signUp = async (req, res) => {
 
         const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "5h" });
 
-        res.status(201).json({ result, token });
+        res.status(201).json({ result: result, token });
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
 
@@ -69,6 +69,6 @@ export const updateUser = async (req, res) => {
 
     await UserModel.findByIdAndUpdate(id, updatedUserInfo, { new: true });
 
-    res.json(updatedUserInfo);
+    res.json({result: updatedUserInfo});
 }
 

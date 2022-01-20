@@ -12,6 +12,8 @@ export const retrieveUser = () => async (dispatch) => {
 }
 
 export const userSignIn = (userInfo, router) => async (dispatch) => {
+  console.log(userInfo)
+  
   try {
     const { data } = await api.userLogin(userInfo);
 
@@ -24,6 +26,8 @@ export const userSignIn = (userInfo, router) => async (dispatch) => {
 };
 
 export const userSignUp = (userInfo, router) => async (dispatch) => {
+  console.log(userInfo)
+
   try {
     const { data } = await api.userRegister(userInfo);
 

@@ -8,11 +8,13 @@ import { selectAuth } from '../state/authSlice';
 const ProfilePage = () => {
     
     const userInfo = useSelector(selectAuth)
+    const profileInfo = JSON.parse(localStorage.getItem('profile'))
+    
 
     return (
         <>
             <UserNav userInfo={userInfo} />
-            <ProfileBanner />
+            <ProfileBanner profileInfo={profileInfo} />
         </>
     )
 }

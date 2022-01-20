@@ -3,13 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 const authSlice = createSlice({
   name: 'authSlice',
   initialState: {
-    auth: []
+    auth: [],
+    user: {},
   },
   reducers: {
     getUser: (state, action) => {
       state.auth = action.payload
     },
     loginUser(state, action) {
+      console.log(action.payload)
       localStorage.setItem('profile', JSON.stringify(action.payload ));
     },
     logout() {
@@ -17,13 +19,19 @@ const authSlice = createSlice({
     },
     updateUser: (state, action) => {
       state.auth.map((userInfo) => (userInfo._id === action.payload._id ? action.payload : userInfo));
-      console.log(state.auth.map)
+      console.log(action.payload)
       localStorage.setItem('profile', JSON.stringify(action.payload));
+    },
+    loadUser: (state, action) => {
+      state.user = JSON.parse(localStorage.getItem('profile'))
+      console.log(state.user)
     }
   }
 });
 
-export const { loginUser, logout, updateUser, getUser } = authSlice.actions;
+
+export const { loginUser, logout, updateUser, getUser, loadUser } = authSlice.actions;
+export const selectUser = (state) => state.auth.user;
 export const selectAuth = (state) => state.auth.auth;
 export default authSlice.reducer;
 

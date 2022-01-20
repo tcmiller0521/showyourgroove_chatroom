@@ -6,7 +6,7 @@ import PrivateUserChats from "./PrivateUserChat";
 import CustomChatrooms from "./CustomChatrooms";
 import UserSettings from "./userSettings";
 
-const ProfileRouter = () => {
+const ProfileRouter = (profileInfo) => {
 
     
     const [key, setKey] = useState('home');
@@ -28,7 +28,7 @@ const ProfileRouter = () => {
                                 <CustomChatrooms />
                             </Tab>
                             <Tab eventKey="settings" title="Settings">
-                                <UserSettings />
+                                <UserSettings profileInfo={profileInfo}/>
                             </Tab>
                         </Tabs>
                     </Col>

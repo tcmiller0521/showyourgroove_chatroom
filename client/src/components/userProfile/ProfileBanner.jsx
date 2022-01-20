@@ -6,8 +6,10 @@ import ProfileRouter from "./ProfileRouter";
 import { useSelector } from "react-redux";
 import { selectAuth } from "../../state/authSlice";
 
-const ProfileBanner = (userInfo) => {
-    console.log(userInfo)
+const ProfileBanner = (profileInfo) => {
+    console.log(profileInfo)
+
+
 
     return (
         <>
@@ -19,11 +21,11 @@ const ProfileBanner = (userInfo) => {
                     <Col lg={{ span: 8 }}>
                         <Container className="d-flex justify-content-start align-items-end user-welcome mb-5">
                             <div className="welcome-text bg-dark d-flex justify-content-center align-items-center px-5">
-                                <h1 className="px-4">Welcome Back, {userInfo.username} </h1>
+                                <h1 className="px-4">Welcome Back,  </h1>
                             </div>
                         </Container>
                         <Container className="pt-5">
-                            <ProfileRouter />
+                            <ProfileRouter profileInfo={profileInfo}/>
                         </Container>
                     </Col>
                 </Row>
