@@ -8,15 +8,13 @@ import FileBase from 'react-file-base64';
 
 
 const initialState = { username: '', password: '', confirmPassword: '', color: '', avatar: '', banner: '', };
+const foundUser = JSON.parse(localStorage.getItem('profile'));
 
 const UserSettings = () => {
     const dispatch = useDispatch();
 
-    const [currentId, setCurrentId] = useState();
-
-    const foundUser = JSON.parse( localStorage.getItem('profile') );
-    setCurrentId(foundUser.result._id)
-
+    const [currentId, setCurrentId] = useState(foundUser.result._id);
+    
     const [formData, setFormData] = useState(initialState);
 
 
