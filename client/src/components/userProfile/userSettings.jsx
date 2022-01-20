@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Card, Button, Form, Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { editUser } from "../../actions/auth";
 import { selectAuth } from "../../state/authSlice";
 import { selectUser } from "../../state/userSlice";
@@ -16,10 +16,9 @@ const UserSettings = () => {
     const usersInfo = useSelector(selectAuth)
     const [userData, setUserData] = useState(profileInfo.result);
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
-    const foundUser = (currentId ? usersInfo.find((userInfo) => userInfo._id === currentId) : null )
+    const history = useHistory();
     
     const emptyState = { username: '', password: '', avatar: '', banner: '', color: '' };
-
 
     const clear = () => {
         setCurrentId();
@@ -33,17 +32,13 @@ const UserSettings = () => {
         console.log(userData);
     }
 
+
     const handleChange = (e) => {
         setUserData({
             ...userData,
             [e.target.name]: e.target.value,
         })
     }
-
-    useEffect(() => {
-        if (foundUser) setUserData(foundUser);
-      }, [foundUser]);
-
 
 
     return (
@@ -85,7 +80,7 @@ const UserSettings = () => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                // defaultValue={foundUser.color}
+                                                defaultValue={profileInfo.result.color}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}

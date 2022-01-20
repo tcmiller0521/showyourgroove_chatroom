@@ -1,21 +1,22 @@
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
 import userAvatar from '../../assets/images/user-avatar.png'
 import { useSelector } from 'react-redux'
-import { selectAuth } from '../../state/authSlice'
+import { selectUser } from '../../state/userSlice'
+
 
 const UserCard = () => {
 
-    const userInfo = useSelector(selectAuth)
+    const profileInfo = useSelector(selectUser)
 
     return (
         <>
             <Row>
                 <Col lg={{ span: 10, offset: 2 }} className="mt-5 pt-5">
-                    <Card style={{backgroundColor: `${userInfo.color}` }}>
+                    <Card style={{backgroundColor: `${profileInfo.result.color}` }}>
                         <Card.Img variant="top" className="avatar-img" />
                         <Card.Body>
                             <Card.Title>
-                                <h2>{userInfo.username}</h2>
+                                <h2>{profileInfo.result.username}</h2>
                             </Card.Title>
                         
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
