@@ -67,7 +67,23 @@
     /* display: block; */
   }
 
-  
+  .pubNav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding-bottom: 0px;
+    margin: 2px;
+    
+  }
+  .roomList {
+    margin: 2px;
+    padding: 2px;
+    background: red;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16pt;
+  }
 
   .roomsHead h1 {
     margin: auto;
