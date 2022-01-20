@@ -8,7 +8,7 @@ const RoomInfo = [
 
     // change link to theme: { bg-color: }
     {
-        title: "general",
+        title: "General",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt faucibus tincidunt. Sed turpis nisl, finibus ut odio non, pretium eleifend enim.",
         image: RockBg, // background
         link: 'general'
