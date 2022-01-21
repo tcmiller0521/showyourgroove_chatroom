@@ -4,14 +4,27 @@ import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { selectUser } from "../../state/userSlice";
+import { logout } from '../../state/authSlice';
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import React from "react";
 
+const user = JSON.parse(localStorage.getItem('profile'));
 
 
 const TopNav = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
     
+    const logoutUser = () => {
+        dispatch(logout());
+
+        history.push('/')
+    }
 
     return (
         <Navbar className="bg-secondary pb-1 ps-5" expand="lg" >
@@ -38,8 +51,18 @@ const TopNav = () => {
                         </Nav.Link>
                     </Navbar.Collapse>
                 </div>
-                <Button href="/login" className="btn-dark me-3">Login</Button>
-                <Button href="/register" className="btn-dark">Register</Button>
+                {(!user) && (
+                    <Button href="/login" className="btn-dark me-3">Login</Button>
+                )}
+                {(!user) && (
+                    <Button href="/register" className="btn-dark">Register</Button>
+                )}
+                {(user?.result) && (
+                    <Button href="/profile" className="btn-dark me-3">Profile</Button>
+                )}
+                {(user?.result) && (
+                    <Button onClick={logoutUser} className="btn-dark">Logout</Button>
+                )}
             </Container>
         </Navbar>
     )

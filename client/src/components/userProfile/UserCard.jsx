@@ -2,18 +2,20 @@ import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
 import userAvatar from '../../assets/images/user-avatar.png'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../state/userSlice'
+import { useState } from 'react'
 
 
 const UserCard = () => {
 
     const profileInfo = useSelector(selectUser)
+    const [currentId, setCurrentId] = useState(profileInfo.result._id);
 
     return (
         <>
             <Row>
                 <Col lg={{ span: 10, offset: 2 }} className="mt-5 pt-5">
                     <Card style={{backgroundColor: `${profileInfo.result.color}` }}>
-                        <Card.Img variant="top" src={profileInfo.result.selectedFile} />
+                        <Card.Img variant="top" src={currentId ? profileInfo.result.selectedFile : '/client/src/assets/images/Taylor_Avatar.png'} />
                         <Card.Body>
                             <Card.Title>
                                 <h2>{profileInfo.result.username}</h2>

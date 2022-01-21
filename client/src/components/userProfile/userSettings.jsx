@@ -84,7 +84,7 @@ const UserSettings = () => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                defaultValue={profileInfo.result.color}
+                                                defaultValue={currentId ? profileInfo.result.color : "#fffff"}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}

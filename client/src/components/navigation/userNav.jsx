@@ -48,7 +48,6 @@ const UserNav = () => {
                         </Nav.Link>
                     </Navbar.Collapse>
                 </div>
-                <Button href="/profile" className="btn-dark me-3">Profile</Button>
                 <Button onClick={logoutUser} className="btn-dark">Logout</Button>
             </Container>
         </Navbar>
