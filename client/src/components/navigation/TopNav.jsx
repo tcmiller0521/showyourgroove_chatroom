@@ -3,10 +3,6 @@ import { Navbar } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button'
 import HalfLogo from '../../assets/images/showyourgroove-halflogo.png'
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { selectUser } from "../../state/userSlice";
 import { logout } from '../../state/authSlice';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -23,7 +19,7 @@ const TopNav = () => {
     const logoutUser = () => {
         dispatch(logout());
 
-        history.push('/')
+        history.push('/logout/loading')
     }
 
     return (

@@ -15,7 +15,7 @@ const UserNav = () => {
     const logoutUser = () => {
         dispatch(logout());
 
-        history.push('/')
+        history.push('/logout/loading')
     }
 
     const profileInfo = useSelector(selectUser)

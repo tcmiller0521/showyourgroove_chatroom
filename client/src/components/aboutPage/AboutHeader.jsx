@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import { Image } from 'react-bootstrap';
-import Header from '../../assets/images/showyourgroove-header.png'
+import Header from '../../assets/images/AboutPage_Header.png'
 
 const AboutHeader = () => {
     return (
