@@ -9,8 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import React from "react";
 import { selectUser } from "../../state/userSlice";
 
-
-
 const UserNav = () => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -21,10 +19,11 @@ const UserNav = () => {
     }
 
     const profileInfo = useSelector(selectUser)
-    
+    const hasColor = (profileInfo.result.color)
+
 
     return (
-        <Navbar className="pb-1 ps-5" style={{backgroundColor: `${profileInfo.result.color}` }} expand="lg" >
+        <Navbar className="pb-1 ps-5" style={hasColor ? {backgroundColor: `${profileInfo.result.color}`} : {backgroundColor: "#098EC3" }} expand="lg" >
             <Container fluid className="d-flex justify-content-center ms-5 ps-5">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <div>

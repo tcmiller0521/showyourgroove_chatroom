@@ -11,7 +11,6 @@ import FileBase from 'react-file-base64';
 
 const UserSettings = () => {
     const profileInfo = useSelector(selectUser)
-    console.log(profileInfo.result)
     const dispatch = useDispatch();
     const usersInfo = useSelector(selectAuth)
     const [userData, setUserData] = useState(profileInfo.result);
@@ -43,6 +42,8 @@ const UserSettings = () => {
     function refreshPage() {
         window.location.reload();
     }
+
+    const hasColor = (profileInfo.result.color)
 
 
     return (
@@ -84,7 +85,7 @@ const UserSettings = () => {
                                             <Form.Control
                                                 type="color"
                                                 name="color"
-                                                defaultValue={currentId ? profileInfo.result.color : "#fffff"}
+                                                defaultValue={hasColor ? profileInfo.result.color : "#098EC3"}
                                                 title="Choose your color"
                                                 className="color-picker"
                                                 onChange={handleChange}

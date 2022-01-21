@@ -3,34 +3,43 @@ import userAvatar from '../../assets/images/user-avatar.png'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../state/userSlice'
 import { useState } from 'react'
+import DefaultAvatar from '../../assets/images/Taylor_Avatar.png';
 
 
 const UserCard = () => {
 
+    const user = JSON.parse(localStorage.getItem('profile'))
     const profileInfo = useSelector(selectUser)
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
+
+    const hasColor = (profileInfo.result.color)
+
 
     return (
         <>
             <Row>
                 <Col lg={{ span: 10, offset: 2 }} className="mt-5 pt-5">
-                    <Card style={{backgroundColor: `${profileInfo.result.color}` }}>
-                        <Card.Img variant="top" src={currentId ? profileInfo.result.selectedFile : '/client/src/assets/images/Taylor_Avatar.png'} />
+                    {(!user.result.selectedFile) && (
+                         <Card style={hasColor ? {backgroundColor: `${profileInfo.result.color}`} : {backgroundColor: "#098EC3" }}>
+                         <Card.Img variant="top" src={profileInfo.result.selectedFile ? profileInfo.result.selectedFile : DefaultAvatar} />
+                         <Card.Body>
+                             <Card.Title>
+                                 <h2>{profileInfo.result.username}</h2>
+                             </Card.Title>
+                         </Card.Body>
+                     </Card>
+                    )};
+
+                    {(user?.result.selectedFile) && (
+                        <Card style={{backgroundColor: `${profileInfo.result.color}` }}>
+                        <Card.Img variant="top" src={profileInfo.result.selectedFile ? profileInfo.result.selectedFile : '/client/src/assets/images/Taylor_Avatar.png'} />
                         <Card.Body>
                             <Card.Title>
                                 <h2>{profileInfo.result.username}</h2>
                             </Card.Title>
-                        
-                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                    <Form.Label>About me</Form.Label>
-                                    <Form.Control as="textarea" rows={3} />
-                                </Form.Group>
-            
-                            <Button className="btn-secondary mt-2 px-5 py-2" type="submit">
-                                Save Changes
-                            </Button>
                         </Card.Body>
                     </Card>
+                    )}
                 </Col>
             </Row>
         </>
