@@ -22,6 +22,17 @@ const Auth = () => {
         setShowPassword(false);
     };
 
+    const user = JSON.parse(localStorage.getItem('profile'));
+
+    const removePassword = () => {
+        for (var i=0; i< user.length; i++) {
+            var user = JSON.parse(user[i]);
+            if (user.password === 3) {
+                user.splice(i, 1);
+            }
+        }
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 

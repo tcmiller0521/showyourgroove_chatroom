@@ -61,15 +61,24 @@ export const getUser = async(req, res) => {
 
 export const updateUser = async (req, res) => {
     const { id } = req.params;
-    const { email, password, username, color, selectedFile, selectedBanner } = req.body;
+    const { email, username, color, selectedFile, selectedBanner } = req.body;
 
-    const updateHashedPassword = await bcrypt.hash(password, 12);
-
-    const updatedUserInfo = { email, password: updateHashedPassword, username, color, selectedFile, selectedBanner, _id: id };
+    const updatedUserInfo = { email, username, color, selectedFile, selectedBanner, _id: id };
 
     await UserModel.findByIdAndUpdate(id, updatedUserInfo, { new: true });
 
     res.json({result: updatedUserInfo});
 }
 
+export const updatePassword = async (req, res) => {
+    const { id } = req.params
+    const { password } = req.body;
 
+    const updateHashedPassword = await bcrypt.hash(password, 12);
+
+    const updatedPassInfo = { password: updateHashedPassword, _id: id };
+
+    await UserModel.findByIdAndUpdate(id, updatedPassInfo, {new: true});
+
+    res.json({result: updatedPassInfo})
+}

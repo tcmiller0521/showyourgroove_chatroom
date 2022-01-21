@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Card, Button, Form, Container, Row, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import { editUser } from "../../actions/auth";
+import { editUser, editPassword } from "../../actions/auth";
 import { selectAuth } from "../../state/authSlice";
 import { selectUser } from "../../state/userSlice";
 import FileBase from 'react-file-base64';
@@ -17,7 +17,8 @@ const UserSettings = () => {
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
     const history = useHistory();
 
-    const emptyState = { username: '', password: '', selectedFile: '', selectedBanner: '', color: '' };
+    const emptyState = { username: '', selectedFile: '', selectedBanner: '', color: '' };
+    
 
     const clear = () => {
         setCurrentId();
@@ -28,9 +29,15 @@ const UserSettings = () => {
         e.preventDefault();
 
         dispatch(editUser(currentId, userData));
+        dispatch(editPassword(currentId, userData));
         console.log(userData);
     }
 
+    // const passwordSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     dispatch(editPassword(currentId))
+    // }
 
     const handleChange = (e) => {
         setUserData({

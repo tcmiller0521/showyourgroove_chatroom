@@ -13,6 +13,7 @@ export const getUsers = () => API.get('/auth/get')
 export const userLogin = (userInfo) => API.post('/auth/signin', userInfo)
 export const userRegister = (userInfo) => API.post('/auth/signup', userInfo)
 export const updateUserInfo = (id, updatedUserInfo) => API.patch(`/auth/update/${id}`, updatedUserInfo);
+export const updatePasswordInfo = (id, updatedPasswordInfo) => API.patch(`/auth/update/password/${id}`, updatedPasswordInfo)
 
 
 export const getMessages = () => API.get('/posts');
