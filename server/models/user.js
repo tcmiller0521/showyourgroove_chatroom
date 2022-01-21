@@ -16,12 +16,10 @@ const userSchema = mongoose.Schema({
     color: {
         type: String,
     },
-    avatar: {
-        type: String,
-    },
-    banner: {
-        type: String,
-    },
+    selectedFile: String,
+
+    selectedBanner: String,
+
     id: {
         type: String,
     }

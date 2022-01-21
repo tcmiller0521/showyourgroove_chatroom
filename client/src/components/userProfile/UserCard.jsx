@@ -13,7 +13,7 @@ const UserCard = () => {
             <Row>
                 <Col lg={{ span: 10, offset: 2 }} className="mt-5 pt-5">
                     <Card style={{backgroundColor: `${profileInfo.result.color}` }}>
-                        <Card.Img variant="top" className="avatar-img" />
+                        <Card.Img variant="top" src={profileInfo.result.selectedFile} />
                         <Card.Body>
                             <Card.Title>
                                 <h2>{profileInfo.result.username}</h2>
