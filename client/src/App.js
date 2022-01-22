@@ -31,7 +31,7 @@ function App() {
         <Route path="/aboutus">
           <AboutUs />
         </Route>
-        <Route path="/firstchatroom">
+        <Route path="/FirstChatroom/:index" exact>
           <FirstChatroom setCurrentId={setCurrentId} currentId={currentId} />
         </Route>
         <Route path="/Support">
