@@ -25,4 +25,5 @@ export const contentSlice = createSlice ({
 
 export const { addContent, deleteContent } = contentSlice.actions;
 export const selectContent = (state) => state.content.content;
+console.log()
 export default contentSlice.reducer;
