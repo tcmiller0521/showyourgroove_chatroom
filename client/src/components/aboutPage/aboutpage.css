@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../../assets/fonts//roboto/Roboto-Regular.ttf);
+}
+
 .aboutbackgroundPic {
   background-image: url(../../assets/images/showyourgroove-homeheader.png);
   height: 80vh;
@@ -25,7 +30,6 @@ background-color: #098EC3
 .AnthonyOutline {
   width: fit-content;
   height: fit-content;
-  line-height: 50px;
   border-radius: 30px;
   text-align: center;
   border: 3px solid #15B6F4;
@@ -58,6 +62,10 @@ background-color: #A8166A;
   text-align: center;
   border: 3px solid #E00095;
   background: transparent;
+}
+
+.aboutBio {
+  font-family: Roboto;
 }
 
 .aboutcenternames {

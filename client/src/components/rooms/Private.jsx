@@ -19,21 +19,22 @@ function Private({setPriv}) {
         <div>
             
                 
-                <Row className={`${RoomsInfo[index].link}roomsHead`}>
-                    <Col>
+                <Row>
+                    <Col className={`${RoomsInfo[index].link}roomsHead`}>
                         <h1>PRIVATE</h1>
+                        <button className="btnHide"
+                            onClick={() => {
+                                setPriv(false);
+                            }}>
+                                ||||
+                        </button>
                     </Col>
                 </Row>
                 <Row className={`${RoomsInfo[index].link}roomsContainer`}>
                     {/* Public rooms list */}
                     <Col className='privateNav'></Col> 
                 </Row>
-                <button
-                    onClick={() => {
-                        setPriv(false);
-                    }}>
-                        XXX
-                </button>
+                
         </div>
     )
 }

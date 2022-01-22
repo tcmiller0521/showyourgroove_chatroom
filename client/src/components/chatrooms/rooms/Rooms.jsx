@@ -1,16 +1,13 @@
 import React from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import RoomsInfo from '../../../assets/contentFiles/Rooms';
 import { useSelector } from 'react-redux';
 import { selectContent } from '../../../state/contentSlice';
 import {
     Row, 
     Col, 
-    Container, 
-    Form,
-    Button 
 } from 'react-bootstrap'
-import RoomInfo from '../../../assets/contentFiles/Rooms';
 
 
 
@@ -20,17 +17,17 @@ function Rooms({setRooms}) {
     console.log(index)
 
     return (
-        <div>
+        <>
             
-                {/* Chatroom Header */}
-                <Row className={`${RoomsInfo[index].link}roomsHead`}>
-                    <Col>
+                {/* Chatroom lists */}
+                <Row>
+                    <Col className={`${RoomsInfo[index].link}roomsHead`}>
                         <h1>PUBLIC</h1>
-                        <button
+                        <button className="btnHide"
                             onClick={() => {
                                 setRooms(false);
                             }}>
-                                x
+                                ||||
                         </button>
                     </Col>
                 </Row>
@@ -39,8 +36,9 @@ function Rooms({setRooms}) {
                     
                         <Col className='pubNav'>
                         {content.map((RoomsInfo, i) => (
-                            <button className='roomList' key={i}>
-                                <Link to={`/firstchatroom/${i}`}>{RoomsInfo.title}</Link>
+                                // {`${RoomsInfo[index].link}roomList`}
+                            <button className="roomList" key={i}>
+                                <Link to={`/firstchatroom/${i}`}> {RoomsInfo.title} </Link>
                             </button>
                         ))}    
                         </Col> 
@@ -48,7 +46,7 @@ function Rooms({setRooms}) {
                 </Row>
                 
             
-        </div>
+        </>
     )
 }
 

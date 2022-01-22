@@ -4,14 +4,18 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-
 import { selectPostList } from '../../../state/postListSlice';
 import { createPostList, editPost } from '../../../actions/messages';
 
-import Posts from '../posts/Posts';
+import ReactScrollableFeed from 'react-scrollable-feed';
 
+import Posts from '../posts/Posts';
+import socket from '../../../Socket/socket';
 
 import RoomsInfo from '../../../assets/contentFiles/Rooms'
+// import UsersInfo from '../../../assets/contentFiles/Users';
+import contentSlice from '../../../state/contentSlice';
+import { selectUsers } from '../../../state/userSlice';
 
 function ChatRoom({ currentId, setCurrentId }) {
 
@@ -28,6 +32,8 @@ function ChatRoom({ currentId, setCurrentId }) {
     // const [ style, setStyle ] = useState(Rooms[index].link)
     const [ postData, setPostData ] = useState(postObj);
 
+    const usersContent = useSelector(selectUsers);
+
     const foundMessage = (currentId ? allPosts.find((post) => post._id === currentId) : null)
 
     const clear = () => {
@@ -41,6 +47,7 @@ function ChatRoom({ currentId, setCurrentId }) {
         // console.log(e)
         if (currentId === 0) {
             dispatch(createPostList(postData))
+            socket.emit('usermessage', postData, RoomsInfo[index].link)
         }
         else {
             dispatch(editPost(currentId, postData))
@@ -54,10 +61,13 @@ function ChatRoom({ currentId, setCurrentId }) {
             [ e.target.name ]: e.target.value,
         });
     };
+        
 
     useEffect(() => {
         if (foundMessage) setPostData(foundMessage)
     }, [foundMessage])
+
+    
 
     return (
         <div>
@@ -71,23 +81,34 @@ function ChatRoom({ currentId, setCurrentId }) {
                         <h1>{RoomsInfo[index].title}</h1> 
                     </Col>
                 </Row>
-                <Row className='chatBody'>
-                    {/* Chatroom Feed */}
+                <Row>
+                    <Stack direction="horizontal" gap={3} className='chatBody'>
+                        {/* Chatroom Feed */}
+                        <Col xs="6" className={`${RoomsInfo[index].link}chatFeed`} id="messageBody">
+                            <ReactScrollableFeed>
+                                <Posts setCurrentId={setCurrentId}/>
+                            </ReactScrollableFeed>
+                        </Col> 
 
-                    <Col xs="9" className={`${RoomsInfo[index].link}chatFeed`}>
-                       <Posts setCurrentId={setCurrentId}/>
-                    </Col> 
-                    {/* Chatroom Population (current users populating room) */}
-                    <Col xs="2"className={`${RoomsInfo[index].link}chatPop`}></Col>
+                        {/* Chatroom Population (current users populating room) */}
+                        <Col xs={{ span: 2, offset: 1 }} className={`${RoomsInfo[index].link}chatPop`}>
+                            {usersContent.map((UsersInfo, i) => (
+                            <div key={i} className={`${RoomsInfo[index].link}userPopName`}> 
+                                <img src={UsersInfo.avatar} alt="" className={`${RoomsInfo[index].link}userAv`}/>
+                                <p>{UsersInfo.username}</p>
+                            </div>
+                            ))} 
+                        </Col>
+                    </Stack>
                 </Row>
                 <Row>
                     {/* Chatroom Input */}
-                    {/* <Col xs='auto'> */}
+                    <Col xs='8'>
                         <Stack direction="horizontal" gap={3}>
-                            <Form autoComplete='off' onSubmit={submitHandler}>
+                            <Form autoComplete='off' onSubmit={submitHandler} className="chatForm">
                                 <Form.Control  className="me-auto" name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/>
                             
-                                <Button variant="secondary" type="submit" onClick={submitHandler}>POST</Button>
+                                <Button className="chatSubmit" variant="secondary" type="submit" onClick={submitHandler}>POST</Button>
                             </Form>
                         </Stack>
                         {/* <form autoComplete='off' onSubmit={submitHandler}>
@@ -95,7 +116,7 @@ function ChatRoom({ currentId, setCurrentId }) {
                             <button type="submit">Post</button>
                         </form> */}
 
-                    {/* </Col> */}
+                    </Col>
                 </Row>
             </Container>
             
