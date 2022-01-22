@@ -10,7 +10,7 @@ import { createPostList, editPost } from '../../../actions/messages';
 import ReactScrollableFeed from 'react-scrollable-feed';
 
 import Posts from '../posts/Posts';
-
+import socket from '../../../Socket/socket';
 
 import RoomsInfo from '../../../assets/contentFiles/Rooms'
 // import UsersInfo from '../../../assets/contentFiles/Users';
@@ -47,6 +47,7 @@ function ChatRoom({ currentId, setCurrentId }) {
         // console.log(e)
         if (currentId === 0) {
             dispatch(createPostList(postData))
+            socket.emit('usermessage', postData, RoomsInfo[index].link)
         }
         else {
             dispatch(editPost(currentId, postData))
