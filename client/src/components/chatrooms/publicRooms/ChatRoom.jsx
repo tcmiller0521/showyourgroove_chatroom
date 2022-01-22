@@ -15,7 +15,7 @@ import socket from '../../../Socket/socket';
 import RoomsInfo from '../../../assets/contentFiles/Rooms'
 // import UsersInfo from '../../../assets/contentFiles/Users';
 import contentSlice from '../../../state/contentSlice';
-import { selectUsers } from '../../../state/userSlice';
+import { selectUser } from '../../../state/userSlice';
 
 function ChatRoom({ currentId, setCurrentId }) {
 
@@ -32,7 +32,7 @@ function ChatRoom({ currentId, setCurrentId }) {
     // const [ style, setStyle ] = useState(Rooms[index].link)
     const [ postData, setPostData ] = useState(postObj);
 
-    const usersContent = useSelector(selectUsers);
+    const usersContent = useSelector(selectUser);
 
     const foundMessage = (currentId ? allPosts.find((post) => post._id === currentId) : null)
 

@@ -5,7 +5,7 @@ import UsersInfo from "../assets/contentFiles/Users";
 export const usersSlice = createSlice ({
     name: 'users',
     initialState: {
-        users: UsersInfo
+        users: JSON.parse(localStorage.getItem('profile'))
     },
     reducers: {
         addUsers: (state, action) => {
@@ -17,6 +17,6 @@ export const usersSlice = createSlice ({
 })
 
 export const { addUsers } = usersSlice.actions;
-export const selectUsers = (state) => state.users.users;
-console.log(selectUsers)
+export const selectUser = (state) => state.users.users;
+console.log(selectUser)
 export default usersSlice.reducer;
