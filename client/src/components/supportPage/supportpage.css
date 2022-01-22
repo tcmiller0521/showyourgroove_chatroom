@@ -3,8 +3,9 @@
 } */
 
 .supportbg {
-    background-image: url(../../assets/images/showyourgroove-homeheader.png);
-    height: 89vh;
+    background-image: url(../../assets/images/supportBg-03.png);
+    background-repeat: no-repeat;
+    height: 100vh;
     width: 100vw;
 }
 

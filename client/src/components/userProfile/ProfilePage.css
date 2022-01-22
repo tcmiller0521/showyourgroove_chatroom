@@ -1,0 +1,35 @@
+.user-banner {
+    background-image: url("../../assets/images/Asset\ 1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+}
+
+.user-welcome {
+    height: 30vh;
+}
+
+.welcome-text {
+    height: 10vh;
+    border-radius: 50px;
+}
+
+.avatar-img {
+    height: 55vh;
+}
+
+.scrollspy-example {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+  }
+
+.pubrooms-divider {
+    width: 40rem;
+    height: .1rem;
+    background-color:white;
+}
+
+.color-picker {
+    width: 14rem;
+}

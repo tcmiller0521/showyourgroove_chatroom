@@ -10,6 +10,9 @@ import RegisterPage from './components/RegisterPage';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { retrieveMessageList } from './actions/messages';
+import ProfilePage from './components/ProfilePage';
+import LoadingPage from './components/userProfile/loadingPage';
+import LogoutLoadingPage from './components/userProfile/logoutLoadingPage ';
 
 function App() {
   const [ currentId, setCurrentId ] = useState(0)
@@ -39,6 +42,15 @@ function App() {
         </Route>
         <Route path="/register">
           <RegisterPage />
+        </Route>
+        <Route path ="/profile">
+          <ProfilePage />
+        </Route>
+        <Route path ="/loading">
+            <LoadingPage />
+        </Route>
+        <Route path="/logout/loading">
+          <LogoutLoadingPage />
         </Route>
       </Switch>
     </>
