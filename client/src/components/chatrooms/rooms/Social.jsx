@@ -16,22 +16,23 @@ function Social({setSocial}) {
         <div>
             
                 {/* Chatroom Header */}
-                <Row className={`${RoomsInfo[index].link}roomsHead`}>
-                    <Col>
+                <Row>
+                    <Col className={`${RoomsInfo[index].link}roomsHead`}>
                         <h1>Friends</h1>
+                        <button className="btnHide" 
+                            onClick= {() => {
+                                
+                                setSocial(false);
+                            }}>
+                                ||||
+                        </button>
                     </Col>
                 </Row>
                 <Row className={`${RoomsInfo[index].link}roomsContainer`}>
                     {/* Public rooms list */}
                     <Col className='pubNav'></Col> 
                 </Row>
-                <button 
-                    onClick= {() => {
-                        
-                        setSocial(false);
-                    }}>
-                        X
-                </button>
+                
             
         </div>
     )

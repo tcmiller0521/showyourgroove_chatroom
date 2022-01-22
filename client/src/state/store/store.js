@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import ContentReducer from '../contentSlice';
+// users
+import usersReducer from '../userSlice'
 
 import authReducer from '../authSlice';
 import messageReducer from '../messageSlice';
@@ -11,7 +13,8 @@ export const store = configureStore({
         content: ContentReducer,
         auth: authReducer,
         message: messageReducer,
-      postList: postReducer,
+        postList: postReducer,
+        users: usersReducer,
 
     }
 });
