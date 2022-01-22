@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { userSignUp } from '../../actions/auth';
+import { userSignIn} from '../../actions/auth';
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-const initialState = { username: '', email: '', password: '', confirmPassword: '' };
+const initialState = { email: '', password: '' };
 
-const Register = () => {
+const LoginCard = () => {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(userSignUp(formData, history.push('/loading')));
+    dispatch(userSignIn(formData, history.push('/loading')));
   };
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,36 +29,30 @@ const Register = () => {
     <Card style={{ width: '35rem', height: '40rem' }} className="bg-dark mt-5 pt-4">
       <Card.Body>
         <Card.Title className="mt-2 mb-4 ">
-          <h1>Create an account</h1>
+          <h1>Sign In</h1>
         </Card.Title>
         <Card.Text>
           <Form>
             <Form.Group className="mb-4 mx-5" controlId="formBasicEmail">
-              <Form.Control name="email" label="Email Address"type="email" placeholder="Enter email" onChange={handleChange}/>
+              <Form.Control name="email" type="email" placeholder="Enter email" onChange={handleChange}/>
             </Form.Group>
 
-            <Form.Group className="mb-4 mx-5" controlId="formBasicUser">
-              <Form.Control name="username" type="username" placeholder="Create Username" onChange={handleChange}/>
-            </Form.Group>
 
             <Form.Group className="mb-4 mx-5" controlId="formBasicPassword">
               <Form.Control name="password" type="password" placeholder="Create Password" onChange={handleChange}/>
             </Form.Group>
 
-            <Form.Group className="mb-4 mx-5" controlId="formBasicPassword2">
-              <Form.Control type="password" placeholder="Re-Enter Password" onChange={handleChange} />
-            </Form.Group>
 
-            <Button className="btn-secondary mt-2 px-4 py-2" type="submit" onClick={handleSubmit}>
-              Create Account
+            <Button className="btn-secondary mt-2 px-5 py-2" type="submit" onClick={handleSubmit}>
+              Login
             </Button>
           </Form>
           <Container className="mt-5">
-            <h3 className='text-light'>Already have an account?</h3>
-            <p>Login to continue sharing your groove!</p>
-            <Button className="btn-secondary px-5 py-2" >
+            <h3 className='text-light'>Don't have an account?</h3>
+            <p>Create one to start sharing your groove!</p>
+            <Button className="btn-secondary px-4 py-2" >
               <Link to="/login" className="text-decoration-none text-light">
-                Login
+                Create an account
               </Link>
             </Button>
           </Container>
@@ -68,4 +62,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default LoginCard;

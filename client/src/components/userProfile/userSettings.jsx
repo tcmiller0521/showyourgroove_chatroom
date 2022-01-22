@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Card, Button, Form, Container, Row, Col } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
 import { editUser, editPassword } from "../../actions/auth";
-import { selectAuth } from "../../state/authSlice";
 import { selectUser } from "../../state/userSlice";
 import FileBase from 'react-file-base64';
 
@@ -12,10 +10,8 @@ import FileBase from 'react-file-base64';
 const UserSettings = () => {
     const profileInfo = useSelector(selectUser)
     const dispatch = useDispatch();
-    const usersInfo = useSelector(selectAuth)
     const [userData, setUserData] = useState(profileInfo.result);
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
-    const history = useHistory();
 
     const emptyState = { username: '', selectedFile: '', selectedBanner: '', color: '' };
     
@@ -28,16 +24,11 @@ const UserSettings = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        dispatch(editUser(currentId, userData));
         dispatch(editPassword(currentId, userData));
+        dispatch(editUser(currentId, userData));
         console.log(userData);
     }
 
-    // const passwordSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     dispatch(editPassword(currentId))
-    // }
 
     const handleChange = (e) => {
         setUserData({
