@@ -41,18 +41,18 @@ io.on('connection', (socket) => {
     });
 
     //send a message to everyone else
-    socket.on('message', (data) => {
-        //broadcast from original senders socket
-        console.log(data)
-        socket.broadcast.emit('serverMessage', data, socket.id)
-    });
+    // socket.on('message', (data) => {
+    //     //broadcast from original senders socket
+    //     console.log(data)
+    //     socket.broadcast.emit('serverMessage', data, socket.id)
+    // });
 
-    socket.on("usermessage", (room, data) => {
+    socket.on("usermessage", (data, room) => {
         socket.leave("public")
         socket.join(room);
-        console.log(data);
+        console.log('user joined ' + room)
         socket.to(room).emit("serverMessage", data, socket.id);
-        io.to(socket.id).emit("PM", `message sent: ${data}`) //Send a PM 
+        // io.to(socket.id).emit("PM", `message sent: ${data}`) //Send a PM 
     })
 
     // Message for user disconnect

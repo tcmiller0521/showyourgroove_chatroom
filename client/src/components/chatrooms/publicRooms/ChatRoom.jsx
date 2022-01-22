@@ -9,7 +9,7 @@ import { selectPostList } from '../../../state/postListSlice';
 import { createPostList, editPost } from '../../../actions/messages';
 
 import Posts from '../posts/Posts';
-
+import socket from '../../../Socket/socket';
 
 import RoomsInfo from '../../../assets/contentFiles/Rooms'
 
@@ -41,6 +41,7 @@ function ChatRoom({ currentId, setCurrentId }) {
         // console.log(e)
         if (currentId === 0) {
             dispatch(createPostList(postData))
+            socket.emit('usermessage', postData, RoomsInfo[index].link)
         }
         else {
             dispatch(editPost(currentId, postData))
