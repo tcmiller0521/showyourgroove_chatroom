@@ -92,12 +92,12 @@ function ChatRoom({ currentId, setCurrentId }) {
 
                         {/* Chatroom Population (current users populating room) */}
                         <Col xs={{ span: 2, offset: 1 }} className={`${RoomsInfo[index].link}chatPop`}>
-                            {usersContent.map((UsersInfo, i) => (
+                            {/* {usersContent.map((UsersInfo, i) => (
                             <div key={i} className={`${RoomsInfo[index].link}userPopName`}> 
                                 <img src={UsersInfo.avatar} alt="" className={`${RoomsInfo[index].link}userAv`}/>
                                 <p>{UsersInfo.username}</p>
                             </div>
-                            ))} 
+                            ))}  */}
                         </Col>
                     </Stack>
                 </Row>
