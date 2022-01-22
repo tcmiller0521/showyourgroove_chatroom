@@ -35,30 +35,28 @@ const FirstChatroom = ({ currentId, setCurrentId }) => {
         return (
             <>
             {/* {`${RoomsInfo[index].link}bg-image`} dont need wrapper {{define RoomsInfo}}*/}
-            <Container className={`${RoomsInfo[index].link}bg-image`}  fluid>
-                {/* <Image fluid src={Background}></Image> */}
-                <Row className="test">
-                    
+            <Container className={`${RoomsInfo[index].link}bg-image`} fluid>
+                <Row>
                     <Container className="room">
-                        <Col className='chatNav'>
+                        <div>
                             <ChatNav setRooms = {setRooms} setPriv = {setPriv} setSocial = {setSocial} setOnline = {setOnline}/>
-                        </Col>
+                        </div>
 
                         
-                        <Col className="public_rooms" xs="2">
+                        <Col className="hidden" xs="2">
                             {rooms ? <Rooms setRooms = {setRooms}/> : null}
                             
                             {priv ? <Private setPriv = {setPriv}/> : null}
                             
                         </Col>
-                        <Col className="friends" xs="2">
+                        <Col className="hidden" xs="2">
                             {social ? <Social setSocial = {setSocial}/> : null}
                             
                             {online ? <Online setOnline = {setOnline}/> : null}
                             
                         </Col>
                         
-                        <Col xs="8">
+                        <Col xs="6">
                             
                                 <Route path='/firstchatroom/:index'>
                                     <ChatRoom setCurrentId={setCurrentId} currentId={currentId} />
