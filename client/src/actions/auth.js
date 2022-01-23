@@ -1,9 +1,21 @@
 import * as api from '../api/index.js';
-import { loginUser } from '../state/authSlice';
+import { loginUser, updateUser, getUser, updatePassword } from '../state/authSlice';
 
-export const userSignIn = (formData, router) => async (dispatch) => {
+
+export const retrieveUser = () => async (dispatch) => {
   try {
-    const { data } = await api.userLogin(formData);
+    const { data } = await api.getUsers();
+    dispatch(getUser(data))
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const userSignIn = (userInfo, router) => async (dispatch) => {
+  console.log(userInfo)
+  
+  try {
+    const { data } = await api.userLogin(userInfo);
 
     dispatch(loginUser(data));
 
@@ -13,9 +25,11 @@ export const userSignIn = (formData, router) => async (dispatch) => {
   }
 };
 
-export const userSignUp = (formData, router) => async (dispatch) => {
+export const userSignUp = (userInfo, router) => async (dispatch) => {
+  console.log(userInfo)
+
   try {
-    const { data } = await api.userRegister(formData);
+    const { data } = await api.userRegister(userInfo);
 
     dispatch(loginUser(data));
 
@@ -24,3 +38,25 @@ export const userSignUp = (formData, router) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const editUser = (id, userInfo) => async (dispatch) => {
+  console.log(id)
+  try {
+    const { data } = await api.updateUserInfo(id, userInfo);
+
+    dispatch(updateUser(data));
+  } catch (error) {
+  console.log(error)
+  }
+}
+
+export const editPassword = (id, userInfo) => async (dispatch) => {
+  console.log(id)
+  try {
+    const { data } = await api.updatePasswordInfo(id, userInfo);
+
+    dispatch(updatePassword(data));
+  } catch (error) {
+  console.log(error)
+  }
+}

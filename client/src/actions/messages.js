@@ -15,6 +15,7 @@ export const createPostList = (post) => async (dispatch) => {
     try {
         const { data } = await api.createMessage(post);
         dispatch(createPost(data))
+        console.log(data)
     } catch (error) {
         console.log(error)
     }

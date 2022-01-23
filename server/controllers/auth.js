@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs'
+import mongoose from 'mongoose'
 import jwt from 'jsonwebtoken'
 
 import UserModel from '../models/user.js'
@@ -15,7 +16,6 @@ export const signIn = async (req, res) => {
 
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
 
-
         if (!isPasswordCorrect) return res.status(400).json({ message: "Password incorrect." });
 
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, secret, { expiresIn: "5h" });
@@ -29,16 +29,16 @@ export const signIn = async (req, res) => {
 }
 
 export const signUp = async (req, res) => {
-    const { email, password, username } = req.body;
+    const { email, password, username, color, selectedFile, selectedBanner } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const result = await UserModel.create({ email, password: hashedPassword, username });
+        const result = await UserModel.create({ email, password: hashedPassword, username, color, selectedFile, selectedBanner });
 
         const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "5h" });
 
-        res.status(201).json({ result, token });
+        res.status(201).json({ result: result, token });
     } catch (error) {
         res.status(500).json({ message: "Something went wrong" });
 
@@ -46,3 +46,39 @@ export const signUp = async (req, res) => {
     }
 }
 
+export const getUser = async(req, res) => {
+    const { id } = req.params
+
+    try {
+    console.log("User Gotten")
+    const userList = await UserModel.findById({ _id: id });
+
+    res.status(200).json( userList )
+    } catch (e) {
+        res.status(400).json({ message: e })
+    }
+}
+
+export const updateUser = async (req, res) => {
+    const { id } = req.params;
+    const { email, username, color, selectedFile, selectedBanner } = req.body;
+
+    const updatedUserInfo = { email, username, color, selectedFile, selectedBanner, _id: id };
+
+    await UserModel.findByIdAndUpdate(id, updatedUserInfo, { new: true });
+
+    res.json({result: updatedUserInfo});
+}
+
+export const updatePassword = async (req, res) => {
+    const { id } = req.params
+    const { password } = req.body;
+
+    const updateHashedPassword = await bcrypt.hash(password, 12);
+
+    const updatedPassInfo = { password: updateHashedPassword, _id: id };
+
+    await UserModel.findByIdAndUpdate(id, updatedPassInfo, {new: true});
+
+    res.json({result: updatedPassInfo})
+}

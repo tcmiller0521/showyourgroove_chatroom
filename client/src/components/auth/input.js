@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from "react-bootstrap"
 
 const Input = ({ name, placeholder, handleChange, label, autoFocus, type, handleShowPassword }) => (
   <div>
@@ -13,9 +14,9 @@ const Input = ({ name, placeholder, handleChange, label, autoFocus, type, handle
       type={type}
     />
     {name === 'password' ?
-      <button type="button" onClick={handleShowPassword}>
+      <Button type="button" onClick={handleShowPassword}>
         {type === 'password' ? "show password" : "hide password"}
-      </button>
+      </Button>
       : null}
   </div>
 );
