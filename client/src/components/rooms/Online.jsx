@@ -16,21 +16,22 @@ function Online({setOnline}) {
     return (
         <div>
             
-                <Row className={`${RoomsInfo[index].link}roomsHead`}>
-                    <Col>
+                <Row>
+                    <Col className={`${RoomsInfo[index].link}roomsHead`}>
                         <h1>Online</h1>
+                        <button className="btnHide"
+                            onClick={() => {
+                                setOnline(false);
+                            }}>
+                                ||||
+                        </button>
                     </Col>
                 </Row>
                 <Row className={`${RoomsInfo[index].link}roomsContainer`}>
                     {/* Public rooms list */}
                     <Col className='privateNav'></Col> 
                 </Row>
-                <button
-                    onClick={() => {
-                        setOnline(false);
-                    }}>
-                        XXXX
-                </button>
+                
         </div>
     )
 }

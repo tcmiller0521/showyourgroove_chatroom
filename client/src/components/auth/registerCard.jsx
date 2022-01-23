@@ -1,12 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { userSignUp } from '../../actions/auth';
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
+const initialState = { username: '', email: '', password: '', confirmPassword: '' };
+
 const Register = () => {
+  const [formData, setFormData] = useState(initialState);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(userSignUp(formData, history.push('/loading')));
+  };
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
     <Card style={{ width: '35rem', height: '40rem' }} className="bg-dark mt-5 pt-4">
@@ -17,29 +34,29 @@ const Register = () => {
         <Card.Text>
           <Form>
             <Form.Group className="mb-4 mx-5" controlId="formBasicEmail">
-              <Form.Control name="email" type="email" placeholder="Enter email" />
+              <Form.Control name="email" label="Email Address"type="email" placeholder="Enter email" onChange={handleChange}/>
             </Form.Group>
 
             <Form.Group className="mb-4 mx-5" controlId="formBasicUser">
-              <Form.Control name="username" type="username" placeholder="Create Username" />
+              <Form.Control name="username" type="username" placeholder="Create Username" onChange={handleChange}/>
             </Form.Group>
 
             <Form.Group className="mb-4 mx-5" controlId="formBasicPassword">
-              <Form.Control name="password" type="password" placeholder="Create Password" />
+              <Form.Control name="password" type="password" placeholder="Create Password" onChange={handleChange}/>
             </Form.Group>
 
             <Form.Group className="mb-4 mx-5" controlId="formBasicPassword2">
-              <Form.Control type="password" placeholder="Re-Enter Password" />
+              <Form.Control type="password" placeholder="Re-Enter Password" onChange={handleChange} />
             </Form.Group>
-            
-            <Button className="btn-secondary mt-2 px-5 py-2" type="submit">
+
+            <Button className="btn-secondary mt-2 px-4 py-2" type="submit" onClick={handleSubmit}>
               Create Account
             </Button>
           </Form>
           <Container className="mt-5">
             <h3 className='text-light'>Already have an account?</h3>
             <p>Login to continue sharing your groove!</p>
-            <Button className="btn-secondary px-5 py-2" type="submit">
+            <Button className="btn-secondary px-5 py-2" >
               <Link to="/login" className="text-decoration-none text-light">
                 Login
               </Link>

@@ -3,7 +3,8 @@ import ContentReducer from '../contentSlice';
 
 import authReducer from '../authSlice';
 import messageReducer from '../messageSlice';
-import postReducer from '../postListSlice'
+import postReducer from '../postListSlice';
+import usersReducer from '../userSlice';
 
 
 export const store = configureStore({
@@ -11,7 +12,9 @@ export const store = configureStore({
         content: ContentReducer,
         auth: authReducer,
         message: messageReducer,
-      postList: postReducer,
+        postList: postReducer,
+        users: usersReducer,
 
-    }
+
+  }
 });

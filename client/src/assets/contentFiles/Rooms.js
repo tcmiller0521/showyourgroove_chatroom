@@ -20,7 +20,7 @@ const RoomInfo = [
         link: 'rock'
     },
 
-{
+    {
         title: "Classical",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt faucibus tincidunt. Sed turpis nisl, finibus ut odio non, pretium eleifend enim.",
         image: ClassicalBg,

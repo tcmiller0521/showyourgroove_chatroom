@@ -9,9 +9,9 @@ const Posts = ({ setCurrentId }) => {
 
     return (
         !allPosts.length ? <h1>Start Your Groove</h1> : (
-            <div className="post">
+            <div>
                 {allPosts.map((post) => (
-                    <div key= {post._id}>
+                    <div key= {post._id} className="post" >
                         <Post post={post} setCurrentId={setCurrentId} />
                     </div>
                 ))}
