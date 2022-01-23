@@ -4,6 +4,7 @@
 import mongoose from 'mongoose';
 
 import PostMessage from '../models/postMessage.js';
+import UserModel from '../models/user.js';
 
 // retrieve all posts
 export const getPosts = async (req, res) => {
@@ -18,9 +19,12 @@ export const getPosts = async (req, res) => {
 
 // create post
 export const createPost = async (req, res) => {
-    const post = req.body;
+    const { email, post, message }= req.body;
 
-    const newPostMessage = new PostMessage({ ...post, createdAt: new Date().toISOString() });
+    const existingUser = await UserModel.findOne({ email });
+    console.log(existingUser)
+
+    const newPostMessage = new PostMessage({ ...post, createdAt: new Date().toISOString(), createdBy: existingUser.username, message });
 
     try {
         await newPostMessage.save();

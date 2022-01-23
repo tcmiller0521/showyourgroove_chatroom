@@ -117,7 +117,14 @@
     z-index: 3;
   } */
   
-  
+  .avatar-img {
+    border-radius: 50%;
+  }
+
+  .avatar {
+    height: 100px;
+    width: 100px;
+  }
 
   
 
@@ -156,10 +163,11 @@
   background-color: #e0009588;
   /* opacity: .75; */
   border-radius: 25px;
+  min-width: 100px;
   height: auto;
   width: fit-content;
   margin: 5px;
-  padding: 2.5px 5px;
+  padding: 2.5px 10px;
   text-align: left;
 }
 
@@ -223,7 +231,7 @@
 
 .rockchatNav {
   display: flex;
-  background-color: #ca0303;
+  background-color: #2797B9;
   flex-direction: column;
   max-width: 80px;
   height: 100vh;
@@ -234,12 +242,12 @@
   height: 100vh;
 }
 .rockchatHead {
-  background: #ca0303;
+  background: #2797B9;
   border-radius: 25px;
   margin: 15px 0px;
 }
 .rockchatFeed {
-  border: 2px solid #ca0303;
+  border: 2px solid #2797B9;
   border-radius: 25px; 
   width: 70%;
   height: 75vh;
@@ -252,7 +260,7 @@
 
 .rockmessage {
   display: flex;
-  background-color: #ca030388;
+  background-color: #2797B9;
   /* opacity: .75; */
   border-radius: 25px;
   height: auto;
@@ -273,7 +281,7 @@
 .rockchatPop {
   /* display: block; */
   direction: column;
-  border: 2px solid #ca0303;
+  border: 2px solid #2797B9;
   border-radius: 25px;
   width: 25%;
   height: 22.5rem;
@@ -284,7 +292,7 @@
 }
 .rockuserPopName {
   display: flex;
-  background-color: #ca030388;
+  background-color: #2797B9;
   border-radius: 50px;
   margin: 5px 5px;
 }
@@ -292,7 +300,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px outset #E00095;
+  border: 2px outset #2797B9;
   margin: auto 5px;
 }
 
@@ -301,7 +309,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  background: #ca0303;
+  background: #2797B9;
   border-radius: 25px;
   margin: 10px 0px;
 }
@@ -311,7 +319,7 @@
   align-items: center;
 }
 .rockroomsContainer { /*content container for all 4 components */
-  border: 2px solid #ca0303;
+  border: 2px solid #2797B9;
   border-radius: 25px;
   height: 18rem;
   overflow: scroll;
@@ -321,7 +329,7 @@
 
 .classicalchatNav {
   display: flex;
-  background-color: #b39f60;
+  background-color: #902D41;
   flex-direction: column;
   max-width: 80px;
   height: 100vh;
@@ -332,12 +340,12 @@
   height: 100vh;
 }
 .classicalchatHead {
-  background: #b39f60;
+  background: #902D41;
   border-radius: 25px;
   margin: 15px 0px;
 }
 .classicalchatFeed {
-  border: 2px solid #b39f60;
+  border: 2px solid #902D41;
   border-radius: 25px; 
   width: 70%;
   height: 75vh;
@@ -350,7 +358,7 @@
 
 .classicalmessage {
   display: flex;
-  background-color: #b39f6088;
+  background-color: #902D41;
   /* opacity: .75; */
   border-radius: 25px;
   height: auto;
@@ -371,7 +379,7 @@
 .classicalchatPop {
   /* display: block; */
   direction: column;
-  border: 2px solid #b39f60;
+  border: 2px solid #902D41;
   border-radius: 25px;
   width: 25%;
   height: 22.5rem;
@@ -382,7 +390,7 @@
 }
 .classicaluserPopName {
   display: flex;
-  background-color: #b39f6088;
+  background-color: #902D41;
   border-radius: 50px;
   margin: 5px 5px;
 }
@@ -390,7 +398,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px outset #E00095;
+  border: 2px outset #902D41;
   margin: auto 5px;
 }
 
@@ -399,7 +407,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  background: #b39f60;
+  background: #902D41;
   border-radius: 25px;
   margin: 10px 0px;
 }
@@ -409,7 +417,7 @@
   align-items: center;
 }
 .classicalroomsContainer { /*content container for all 4 components */
-  border: 2px solid #b39f60;
+  border: 2px solid #902D41;
   border-radius: 25px;
   height: 18rem;
   overflow: scroll;
@@ -418,7 +426,7 @@
 
 .hipHopchatNav {
   display: flex;
-  background-color: #265c21;
+  background-color: #2E3138;
   flex-direction: column;
   max-width: 80px;
   height: 100vh;
@@ -429,12 +437,12 @@
   height: 100vh;
 }
 .hipHopchatHead {
-  background: #265c21;
+  background: #2E3138;
   border-radius: 25px;
   margin: 15px 0px;
 }
 .hipHopchatFeed {
-  border: 2px solid #265c21;
+  border: 2px solid #2E3138;
   border-radius: 25px; 
   width: 70%;
   height: 75vh;
@@ -447,7 +455,7 @@
 
 .hipHopmessage {
   display: flex;
-  background-color: #265c2188;
+  background-color: #2E3138;
   /* opacity: .75; */
   border-radius: 25px;
   height: auto;
@@ -468,7 +476,7 @@
 .hipHopchatPop {
   /* display: block; */
   direction: column;
-  border: 2px solid #265c21;
+  border: 2px solid #2E3138;
   border-radius: 25px;
   width: 25%;
   height: 22.5rem;
@@ -479,7 +487,7 @@
 }
 .hipHopuserPopName {
   display: flex;
-  background-color: #265c2188;
+  background-color: #2E3138;
   border-radius: 50px;
   margin: 5px 5px;
 }
@@ -487,7 +495,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px outset #E00095;
+  border: 2px outset #2E3138;
   margin: auto 5px;
 }
 
@@ -496,7 +504,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  background: #265c21;
+  background: #2E3138;
   border-radius: 25px;
   margin: 10px 0px;
 }
@@ -506,7 +514,7 @@
   align-items: center;
 }
 .hipHoproomsContainer { /*content container for all 4 components */
-  border: 2px solid #265c21;
+  border: 2px solid #2E3138;
   border-radius: 25px;
   height: 18rem;
   overflow: scroll;
@@ -515,7 +523,7 @@
 
 .popchatNav {
   display: flex;
-  background-color: #9954c2;
+  background-color: #3943B7;
   flex-direction: column;
   max-width: 80px;
   height: 100vh;
@@ -526,12 +534,12 @@
   height: 100vh;
 }
 .popchatHead {
-  background: #9954c2;
+  background: #3943B7;
   border-radius: 25px;
   margin: 15px 0px;
 }
 .popchatFeed {
-  border: 2px solid #9954c2;
+  border: 2px solid #3943B7;
   border-radius: 25px; 
   width: 70%;
   height: 75vh;
@@ -544,7 +552,7 @@
 
 .popmessage {
   display: flex;
-  background-color: #9954c288;
+  background-color: #3943B7;
   /* opacity: .75; */
   border-radius: 25px;
   height: auto;
@@ -565,7 +573,7 @@
 .popchatPop {
   /* display: block; */
   direction: column;
-  border: 2px solid #9954c2;
+  border: 2px solid #3943B7;
   border-radius: 25px;
   width: 25%;
   height: 22.5rem;
@@ -576,7 +584,7 @@
 }
 .popuserPopName {
   display: flex;
-  background-color: #9954c288;
+  background-color: #3943B7;
   border-radius: 50px;
   margin: 5px 5px;
 }
@@ -584,7 +592,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px outset #E00095;
+  border: 2px outset #3943B7;
   margin: auto 5px;
 }
 
@@ -593,7 +601,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  background: #9954c2;
+  background: #3943B7;
   border-radius: 25px;
   margin: 10px 0px;
 }
@@ -603,7 +611,7 @@
   align-items: center;
 }
 .poproomsContainer { /*content container for all 4 components */
-  border: 2px solid #9954c2;
+  border: 2px solid #3943B7;
   border-radius: 25px;
   height: 18rem;
   overflow: scroll;
@@ -613,7 +621,7 @@
 
 .indiechatNav {
   display: flex;
-  background-color: #ac610d;
+  background-color: #FCBA04;
   flex-direction: column;
   max-width: 80px;
   height: 100vh;
@@ -624,12 +632,12 @@
   height: 100vh;
 }
 .indiechatHead {
-  background: #ac610d;
+  background: #FCBA04;
   border-radius: 25px;
   margin: 15px 0px;
 }
 .indiechatFeed {
-  border: 2px solid #ac610d;
+  border: 2px solid #FCBA04;
   border-radius: 25px; 
   width: 70%;
   height: 75vh;
@@ -642,7 +650,7 @@
 
 .indiemessage {
   display: flex;
-  background-color: #ac610d88;
+  background-color: #FCBA04;
   /* opacity: .75; */
   border-radius: 25px;
   height: auto;
@@ -663,7 +671,7 @@
 .indiechatPop {
   /* display: block; */
   direction: column;
-  border: 2px solid #ac610d;
+  border: 2px solid #FCBA04;
   border-radius: 25px;
   width: 25%;
   height: 22.5rem;
@@ -674,7 +682,7 @@
 }
 .indieuserPopName {
   display: flex;
-  background-color: #ac610d88;
+  background-color: #FCBA04;
   border-radius: 50px;
   margin: 5px 5px;
 }
@@ -682,7 +690,7 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  border: 2px outset #E00095;
+  border: 2px outset #FCBA04;
   margin: auto 5px;
 }
 
@@ -691,7 +699,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  background: #ac610d;
+  background: #FCBA04;
   border-radius: 25px;
   margin: 10px 0px;
 }
@@ -701,8 +709,9 @@
   align-items: center;
 }
 .indieroomsContainer { /*content container for all 4 components */
-  border: 2px solid #ac610d;
+  border: 2px solid #FCBA04;
   border-radius: 25px;
   height: 18rem;
   overflow: scroll;
 }
+

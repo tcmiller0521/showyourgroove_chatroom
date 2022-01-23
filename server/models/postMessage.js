@@ -9,6 +9,9 @@ const postSchema = mongoose.Schema({
         type: Date,
         default: new Date(),
     },
+    createdBy: {
+        type: String,
+    }
 });
 
 // create and export model
