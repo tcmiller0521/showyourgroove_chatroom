@@ -17,16 +17,16 @@ function ChatRoom({ currentId, setCurrentId }) {
 
     const dispatch = useDispatch();
     const allPosts = useSelector(selectPostList);
-    const {index} = useParams();
+    const { index } = useParams();
     console.log(index);
-    
+
 
     const postObj = {
         message: '',
     };
 
     // const [ style, setStyle ] = useState(Rooms[index].link)
-    const [ postData, setPostData ] = useState(postObj);
+    const [postData, setPostData] = useState(postObj);
 
     const foundMessage = (currentId ? allPosts.find((post) => post._id === currentId) : null)
 
@@ -50,9 +50,9 @@ function ChatRoom({ currentId, setCurrentId }) {
     };
 
     const changeHandler = (e) => {
-        setPostData ({
+        setPostData({
             ...postData,
-            [ e.target.name ]: e.target.value,
+            [e.target.name]: e.target.value,
         });
     };
 
@@ -64,34 +64,34 @@ function ChatRoom({ currentId, setCurrentId }) {
         <div>
             {/* <Rooms /> */}
             {/* className=`${theme}`} */}
-            <Container className="mainChat"> 
+            <Container className="mainChat">
                 {/* Chatroom Header */}
                 <Row className={`${RoomsInfo[index].link}chatHead`}>
                     <Col>
                         {/* Chatroom title */}
-                        <h1>{RoomsInfo[index].title}</h1> 
+                        <h1>{RoomsInfo[index].title}</h1>
                     </Col>
                 </Row>
                 <Row className='chatBody'>
                     {/* Chatroom Feed */}
 
                     <Col xs="9" className={`${RoomsInfo[index].link}chatFeed`}>
-                       <Posts setCurrentId={setCurrentId}/>
-                    </Col> 
+                        <Posts setCurrentId={setCurrentId} />
+                    </Col>
                     {/* Chatroom Population (current users populating room) */}
-                    <Col xs="2"className={`${RoomsInfo[index].link}chatPop`}></Col>
+                    <Col xs="2" className={`${RoomsInfo[index].link}chatPop`}></Col>
                 </Row>
                 <Row>
                     {/* Chatroom Input */}
                     {/* <Col xs='auto'> */}
-                        <Stack direction="horizontal" gap={3}>
-                            <Form autoComplete='off' onSubmit={submitHandler}>
-                                <Form.Control  className="me-auto" name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/>
-                            
-                                <Button variant="secondary" type="submit" onClick={submitHandler}>POST</Button>
-                            </Form>
-                        </Stack>
-                        {/* <form autoComplete='off' onSubmit={submitHandler}>
+                    <Stack direction="horizontal" gap={3}>
+                        <Form autoComplete='off' onSubmit={submitHandler}>
+                            <Form.Control className="me-auto" name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler} />
+
+                            <Button variant="secondary" type="submit" onClick={submitHandler}>POST</Button>
+                        </Form>
+                    </Stack>
+                    {/* <form autoComplete='off' onSubmit={submitHandler}>
                             <div><input name="message" placeholder="What's your Groove?" value={postData.message} onChange={changeHandler}/></div>
                             <button type="submit">Post</button>
                         </form> */}
@@ -99,8 +99,8 @@ function ChatRoom({ currentId, setCurrentId }) {
                     {/* </Col> */}
                 </Row>
             </Container>
-            
-            
+
+
         </div>
     )
 }
