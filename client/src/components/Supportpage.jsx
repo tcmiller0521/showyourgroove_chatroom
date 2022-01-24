@@ -33,16 +33,16 @@ const Support = () => {
                                     An area to (hopefully) find solutions to any problems you may have.
                                     <Accordion>
                                         <Accordion.Item eventKey='2'>
-                                            <Accordion.Header>Q1: </Accordion.Header>
-                                            <Accordion.Body>yay</Accordion.Body>
+                                            <Accordion.Header>Q1: Why do you have to have an account?</Accordion.Header>
+                                            <Accordion.Body>Accounts are needed so that you can save your favorite rooms, add friends, and create your own rooms! Without an account, none of that information would save!</Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey='3'>
-                                            <Accordion.Header>Q2: </Accordion.Header>
-                                            <Accordion.Body>wow</Accordion.Body>
+                                            <Accordion.Header>Q2: Who can see my chats?</Accordion.Header>
+                                            <Accordion.Body>Well, that depends on what type of room you're in! If you're in a public room, then anyone who joins that room can see your messages. If you're in a private room, then only the people who were invited to that room can see your messages.</Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey='4'>
-                                            <Accordion.Header>Q3: </Accordion.Header>
-                                            <Accordion.Body>cool</Accordion.Body>
+                                            <Accordion.Header>Q3: How long did is take to create Show your groove?</Accordion.Header>
+                                            <Accordion.Body>It took a while to get it up and going and it still needs work. But at least its working!</Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
                                 </Accordion.Body>
@@ -67,7 +67,7 @@ const Support = () => {
                     </Container>
                 </div>
             </body>
-            <Footer />
+            <TopNav />
         </>
     )
 }

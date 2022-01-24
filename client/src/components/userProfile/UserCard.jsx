@@ -1,9 +1,8 @@
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
-import userAvatar from '../../assets/images/user-avatar.png'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../state/userSlice'
 import { useState } from 'react'
-import DefaultAvatar from '../../assets/images/Taylor_Avatar.png';
+import DefaultAvatar from '../../assets/images/DefaultAvatar.png';
 
 
 const UserCard = () => {

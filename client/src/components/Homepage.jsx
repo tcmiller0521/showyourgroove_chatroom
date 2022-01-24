@@ -17,7 +17,7 @@ const Homepage = () => {
             <BrowseChatRooms />
             <CreateChatroom />
             <ShareYourStyleCarousel />
-            <Footer />
+            <TopNav />
         </>
     )
 }

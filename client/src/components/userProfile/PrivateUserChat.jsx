@@ -2,10 +2,27 @@ import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import userChatRooms from "../../assets/contentFiles/userChatrooms";
+import { selectAuth } from "../../state/authSlice";
+import { useDispatch } from "react-redux";
+import { retrieveUser } from "../../actions/auth";
+import { useSelector } from "react-redux";
 
 const PrivateUserChats = () => {
 
     const [ChatInfo] = useState(userChatRooms);
+
+    const profileInfo = useSelector(selectAuth)
+    const dispatch = useDispatch();
+    const [userData, setUserData] = useState(profileInfo);
+    const [currentId, setCurrentId] = useState(profileInfo._id)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        dispatch(retrieveUser());
+        console.log(profileInfo)
+    }
+
 
     return (
         <>
@@ -22,7 +39,10 @@ const PrivateUserChats = () => {
                         className="scrollspy-example"
                     >
                             <section id="example-1">
-                                <h2>Coming Soon</h2>
+                                <Button onClick={handleSubmit}>
+                                    get users
+                                </Button>
+                                <h2>{profileInfo.username}</h2>
                             </section>
                     </div>
                 </div>

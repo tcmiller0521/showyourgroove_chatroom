@@ -21,7 +21,6 @@ const LoginPage = () => {
                     </Col>
                 </Row>
             </Container>
-            <Footer />
         </>
     )
 }

@@ -51,7 +51,7 @@ export const getUser = async(req, res) => {
 
     try {
     console.log("User Gotten")
-    const userList = await UserModel.findById({ _id: id });
+    const userList = await UserModel.find();
 
     res.status(200).json( userList )
     } catch (e) {

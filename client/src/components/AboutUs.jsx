@@ -6,6 +6,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import TopNav from './navigation/TopNav';
 import Footer from './navigation/Footer';
 import TaylorAvatar from '../assets/images/Taylor_Avatar.png'
+import TrevorAvatar from '../assets/images/Trevor_Avatar.png'
+import AnthonyAvatar from '../assets/images/Anthony_Avatar.png'
 
 const AboutUs = () => {
     return (
@@ -45,7 +47,7 @@ const AboutUs = () => {
                 <Container fluid className='aboutconstrain'>
                     <CardGroup className='text-light mb-5'>
                         <Card className='aboutCards'>
-                            <Card.Img variant="top" src={cardPlaceholder} />
+                            <Card.Img variant="top" src={AnthonyAvatar} />
                             <Card.Body className='AnthonyCard'>
                                 <Card.Title className="AnthonyOutline aboutcenternames"><h1>ANTHONY GIRONE</h1></Card.Title>
                                 <div className="AnthonyOutline py-4 px-2">
@@ -54,7 +56,7 @@ const AboutUs = () => {
                             </Card.Body>
                         </Card>
                         <Card className='aboutCards'>
-                            <Card.Img variant="top" src={cardPlaceholder} />
+                            <Card.Img variant="top" src={TrevorAvatar} />
                             <Card.Body className='TrevorCard'>
                                 <Card.Title className="TrevorOutline aboutcenternames"><h1>TREVOR LITTLE</h1></Card.Title>
                                 <Card.Text className="TrevorOutline py-4 px-2">
