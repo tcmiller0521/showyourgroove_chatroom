@@ -19,7 +19,7 @@ const Post = ({ post, setCurrentId }) => {
     const userInfo = useSelector(selectUser)
 
 
-    const hasAvatar = (userInfo.result.avatar)
+    const hasAvatar = (userInfo.result.selectedFile)
 
     return (
 
@@ -27,12 +27,12 @@ const Post = ({ post, setCurrentId }) => {
             <Container>
                 <Row>
                     <Col lg={1} md={1} className="me-2 mb-3">
-                            <img style={{height: "2rem", width: "2rem"}} className="avatar-img" src={hasAvatar ? userInfo.result.avatar : DefaultAvatar} />
+                            <img style={{height: "2rem", width: "2rem"}} className="avatar-img" src={hasAvatar ? userInfo.result.selectedFile : DefaultAvatar} />
                     </Col>
                     <Col>
                         <div className={`${RoomsInfo[index].link}message`}>
                             <div className='p-1'>
-                            <h6> {post.createdBy} </h6>
+                            <h6> {userInfo.result.username} </h6>
                             <p> {post.message} </p>
                             </div>
                         </div>
