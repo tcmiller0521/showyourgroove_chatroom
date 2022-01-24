@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import RoomsInfo from '../../../../assets/contentFiles/Rooms';
 import { selectUser } from '../../../../state/userSlice';
-import DefaultAvatar from '../../../../assets/images/user-avatar.png';
+import DefaultAvatar from '../../../../assets/images/DefaultAvatar.png';
 import { selectPostList } from '../../../../state/postListSlice';
 import { selectAuth } from '../../../../state/authSlice';
 

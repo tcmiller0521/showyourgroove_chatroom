@@ -7,7 +7,7 @@ import { getUser, signIn, signUp, updatePassword, updateUser } from '../controll
 router.post( "/signin", signIn);
 router.post("/signup", checkDuplicateEmail, checkDuplicateUsername, signUp);
 router.patch("/update/:id", updateUser, checkDuplicateUsername);
-router.get("/get/:id", getUser);
+router.get("/get", getUser);
 router.patch('/update/password/:id', updatePassword)
 
 export default router;
