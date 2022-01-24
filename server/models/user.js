@@ -17,11 +17,8 @@ const userSchema = mongoose.Schema({
     },
     selectedFile: String,
 
-    selectedBanner: String,
+    selectedFiles: String,
 
-    id: {
-        type: String,
-    }
 })
 
 const UserModel = mongoose.model('UserModel', userSchema);

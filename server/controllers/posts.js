@@ -18,7 +18,9 @@ export const getPosts = async (req, res) => {
 
 // create post
 export const createPost = async (req, res) => {
-    const post = req.body;
+    const post= req.body;
+
+
 
     const newPostMessage = new PostMessage({ ...post, createdAt: new Date().toISOString() });
 

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Link } from 'react-router-dom'
-import userChatRooms from "../../assets/contentFiles/userChatrooms";
+import RoomInfo from "../../assets/contentFiles/Rooms";
 
 const PublicUserChats = () => {
 
-    const [ChatInfo] = useState(userChatRooms);
+    const [RoomData] = useState(RoomInfo);
 
     return (
         <>
@@ -21,14 +21,14 @@ const PublicUserChats = () => {
                         data-mdb-offset="0"
                         className="scrollspy-example"
                     >
-                        {ChatInfo.map((userChatRooms, i) => (
+                        {RoomData.map((RoomInfo, i) => (
                             <section key={i} id="example-1">
                                 <Row>
                                     <Col lg={6}>
-                                        <h2>{userChatRooms.chatroom}</h2>
+                                        <h2>{RoomInfo.title}</h2>
                                     </Col>
                                     <Col lg={2}>
-                                        <Link to={userChatRooms.link}>
+                                        <Link to={`/firstchatroom/${i}`}>
                                             <Button className="btn-secondary mb-3">
                                                 Join Room
                                             </Button>

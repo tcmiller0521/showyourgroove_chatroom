@@ -13,7 +13,8 @@ const UserSettings = () => {
     const [userData, setUserData] = useState(profileInfo.result);
     const [currentId, setCurrentId] = useState(profileInfo.result._id);
 
-    const emptyState = { username: '', selectedFile: '', selectedBanner: '', color: '' };
+    const emptyState = { username: '', selectedFile: '', selectedFiles: '', color: '' };
+
     
 
     const clear = () => {
@@ -24,9 +25,14 @@ const UserSettings = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        dispatch(editPassword(currentId, userData));
         dispatch(editUser(currentId, userData));
         console.log(userData);
+    }
+
+    const handleUpdatePass = async (e) => {
+        e.preventDefault();
+
+        dispatch(editPassword(currentId, userData));
     }
 
 
@@ -68,6 +74,9 @@ const UserSettings = () => {
                             <Form.Group className="mb-4 mx-5" controlId="formConfirmPassword">
                                 <Form.Control name="confirmPassword" type="updatePassword" placeholder="Confirm Password" onChange={handleChange} />
                             </Form.Group>
+                            <Button className="btn-secondary mt-4 px-5 py-2" type="submit" onClick={handleUpdatePass}>
+                                Update Password
+                            </Button>
 
 
                             <Container className="mt-5">
@@ -91,8 +100,8 @@ const UserSettings = () => {
                                         </>
                                     </Col>
                                     <Col>
-                                        <h3 className="text-light">Avatar Settings</h3>
-                                        <p>Upload your own picture or customize an avatar!</p>
+                                        <h3 className="text-light mt-4">Avatar Settings</h3>
+                                        <p>Upload your own avatar!</p>
                                         <Form.Group controlId="formFile" className="mb-3">
                                             <FileBase type="file" multiple={false} onDone={({ base64 }) => setUserData({ ...userData, selectedFile: base64 })} />
                                         </Form.Group>
@@ -100,9 +109,9 @@ const UserSettings = () => {
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <h3 className="text-light">Profile Banner</h3>
-                                        <Form.Group controlId="formBanner" className="mb-3">
-                                            <FileBase type="file" multiple={false} onDone={({ base64 }) => setUserData({ ...userData, selectedBanner: base64 })} />
+                                        <h3 className="text-light mt-4">Profile Banner</h3>
+                                        <Form.Group controlId="formFile" className="mb-3">
+                                            <FileBase type="files" multiple={false} onDone={({ base64 }) => setUserData({ ...userData, selectedFiles: base64 })} />
                                         </Form.Group>
                                     </Col>
                                 </Row>

@@ -8,7 +8,7 @@ import LoginPage from './components/LoginPage';
 import Support from './components/Supportpage';
 import RegisterPage from './components/RegisterPage';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { retrieveMessageList } from './actions/messages';
 import ProfilePage from './components/ProfilePage';
 import LoadingPage from './components/userProfile/loadingPage';
