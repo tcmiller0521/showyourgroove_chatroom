@@ -29,12 +29,12 @@ export const signIn = async (req, res) => {
 }
 
 export const signUp = async (req, res) => {
-    const { email, password, username, color, selectedFile, selectedBanner } = req.body;
+    const { email, password, username, color, selectedFiles, selectedFile } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 12);
 
-        const result = await UserModel.create({ email, password: hashedPassword, username, color, selectedFile, selectedBanner });
+        const result = await UserModel.create({ email, password: hashedPassword, username, color, selectedFile, selectedFiles });
 
         const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: "5h" });
 
@@ -61,9 +61,9 @@ export const getUser = async(req, res) => {
 
 export const updateUser = async (req, res) => {
     const { id } = req.params;
-    const { email, username, color, selectedFile, selectedBanner } = req.body;
+    const { email, username, color, selectedFile, selectedFiles } = req.body;
 
-    const updatedUserInfo = { email, username, color, selectedFile, selectedBanner, _id: id };
+    const updatedUserInfo = { email, username, color, selectedFile, selectedFiles, _id: id };
 
     await UserModel.findByIdAndUpdate(id, updatedUserInfo, { new: true });
 

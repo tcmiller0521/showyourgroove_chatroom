@@ -21,25 +21,9 @@ const CustomChatrooms = () => {
                         data-mdb-offset="0"
                         className="scrollspy-example"
                     >
-                        {ChatInfo.map((userChatRooms, i) => (
-                            <section key={i} id="example-1">
-                                <Row>
-                                    <Col lg={6}>
-                                        <h2>{userChatRooms.chatroom}</h2>
-                                    </Col>
-                                    <Col lg={2}>
-                                        <Link to={userChatRooms.link}>
-                                            <Button className="btn-secondary mb-3">
-                                                Join Room
-                                            </Button>
-                                        </Link>
-                                    </Col>
-                                    <Col lg={2}>
-                                        <Button className="btn-secondary">Delete</Button>
-                                    </Col>
-                                </Row>
+                        <section id="example-1">
+                                <h2>Coming Soon</h2>
                             </section>
-                        ))}
                     </div>
                 </div>
             </div>
